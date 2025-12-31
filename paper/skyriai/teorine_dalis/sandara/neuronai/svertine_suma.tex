@@ -1,0 +1,10 @@
+\subsubsection{Svertinės sumos funkcija}
+\label{skr:svertine_suma}
+
+Kaip jau buvo minėta neuronai tarpusavyje yra sujungti ir taip sudaro tinklą. Kiekviena jungtis tarp neuronų yra apibūdinama svoriu - skaitine reikšme, nusakančia, kokio dydžio įtaką vienas neuronas turi kitam. Šios reikšmės yra naudojamos svertinės sumos funkcijos reikšmei apskaičiuoti, kurios pavidalas yra
+\[
+    z = \sum_{i=0}^{n} x_i \cdot w_i + b
+\]
+Čia $z$ - svertinės sumos reikšmė, $x_i$ - i-ojo neurono įvestis nagrinėjama neuronui, $w_i$ - i-ojo neurono svoris, susijęs su nagrinėjamu neuronu, $b$ - šališkumo (angl. \enquote{bias}) reikšmė.
+
+Ši funkcija yra reikalinga tam, kad neuronas galėtų apibendrinti visas gautas įvestis į vieną skaitinę vertę, kuri vėliau perduodama aktyvavimo funkcijai, jei ji yra naudojama, arba kitam neuronų sluoksniui.
