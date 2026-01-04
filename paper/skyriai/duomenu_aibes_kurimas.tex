@@ -1,0 +1,70 @@
+\section{Duomenų aibės kūrimas}
+
+    \subsection{Dirbtinis duomenų generavimas}
+
+        Dirbtinis duomenų generavimas - tai duomenų kūrimas, naudojant programinius algoritmus, siekiant atkartoti realaus pasaulio duomenų statistines savybes. 
+
+        Dirbtinai sugeneruoti duomenys leidžia užtikrinti didelį duomenų kiekį bei jų įvairumą. Dėl šios priežasties šis duomenų kūrimo būdas yra plačiai naudojamas tais atvejais, kai realaus pasaulio duomenų yra per mažai, arba kai jie yra sunkiai prieinami dėl finansinių priežasčių. 
+
+        Be to dirbtinis duomenų generavimas yra naudingas situacijose, kai dirbama su duomenimis, reguliuojamais asmens duomenų apsaugos įstatymais. Tokiuose atvejuose sintetiniai duomenys leidžia išvengti jautrių duomenų nutekėjimo, kadangi modelių apmokymui nėra naudojami su konkrečiais asmenimis susiję duomenys. 
+
+        Kitas scenarijus, aktualus ir šio kursinio kontekste, yra kai duomenys neprivalo turėti kažkokio konkretaus domeno. Pavyzdžiui, tiriant mašininio mokymosi metodų savybes yra pravartu modelius išbandyti su skirtingo pobūdžio duomenimis. Tad dirbtinis duomenų generavimas suteikia galimybę lengvai sugeneruoti didelį kiekį įvairias savybes turinčių duomenų.
+
+        \subsubsection{Sferos funkcija}
+
+            Sferos funkcija yra viena iš paprasčiausių etalono funkcijų, kurios pavidalą galima rasti žemiau pateiktoje \ref{lgt:sferos_funkcija} formulėje.
+
+            \begin{equation}
+                \label{eq:sferos_etalono_funkc}
+                f(X) = \sum_{i = 0}^{n}{x_i^2}
+            \end{equation}
+
+            Čia $x_i$ yra vektoriaus $X$ komponentės, o $n$ duomenų dimensijos dydis. 
+
+            Šios funkcijos grafikas yra simetriškas ir pasižymi išgaubtumu. Žemiau pateiktas \ref{pav:sferos_funkcijos_grafikas} paveikslėlis atvaizduoja sferos funkcijos grafiką dvimačiu atveju.
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.7\linewidth]{attachments/img/sferos_funkc_grafikas.png}
+                \caption{Sferos funkcijos generuojamų duomenų grafikas}
+                \label{pav:sferos_funkcijos_grafikas}
+            \end{figure}
+
+    \subsection{Triukšmo duomenų aibei pritaikymas}
+
+        Dirbant su realaus pasaulio duomenimis dažnai susiduriama su tuo, kad jie nėra visiškai tikslūs. To priežastys gali būti įvairios - žmogaus klaidos, prietaisų tikslumo ribos, aplinkos veiksnių poveikis ir t.t. Tokie nedideli netikslumai duomenyse yra vadinimai triukšmu.
+
+        Kadangi realaus pasaulio sąlygomis surinkti duomenys retai būna tikslūs, mašininio mokymosi metodai turi gebėti gerai dirbti su duomenimis, kuriuose yra triukšmo. Dėl šios priežasties apmokant mašininio mokymosi modelius su dirbtinai generuotais duomenimis, taip pat yra duomenims pridėti tam tikrą triukšmo lygį.
+
+        \subsubsection{Gauso skirstinio metodas}
+
+            Vienas iš triukšmo pridėjimo būdų pasitelkia Gauso skirstinį.
+
+            Žemiau pateiktuose paveikslėliuose galime pamatyti, kaip $\sigma$ triukšmo parametro dydis lemia taškų išsidėstymą.
+
+            Žemiau pateiktame paveikslėlyje matome triukšmo pritaikymo pavyzdį dvimatėje erdvėje. 
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\linewidth]{attachments/img/triuksmo_pvz_0.png}
+                \caption{Švarių ir duomenų su triukšmu sugretinimas, kai ...}
+                \label{pav:triuksmo_ir_svariu_duomenu_sugretinimas_0}
+            \end{figure}
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.8\linewidth]{attachments/img/triuksmo_pvz_1.png}
+                \caption{Švarių ir duomenų su triukšmu sugretinimas, kai ...}
+                \label{pav:triuksmo_ir_svariu_duomenu_sugretinimas_1}
+            \end{figure}
+
+            Šio kursinio kontekste paklaidos buvo generuojamas pasitelkiant normalųjį skirstinį, kur paklaidos vidurkis yra 0, o standartinis nuokrypis 0.5.
+
+    % \subsection{Duomenų normalizavimas}
+
+    %     Šis metodas leidžia skaitines reikšmes sutraukti į intervalą $[0; 1]$ taip išvengiant skirtingų požymių mastelių įtakos mokymo procesui. Tai yra atliekama pasitelkiant formulę
+
+    %     \begin{equation}
+    %         \label{eq:min_max_funkc}
+    %         x' = \frac{x - \min(x)}{\max(x) - \min(x)}
+    %     \end{equation}
