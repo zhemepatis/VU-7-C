@@ -19,7 +19,7 @@
 
         \subsubsection{Modelis}
 
-            Siekiant panagrinėti, kaip dirbtinis neuroninis tinklas susitvarko su triukšmingais duomenimis, buvo sukurtas modelis, sudarytas iš vieno įvesties sluoksnio (4 neuronai), vieno paslėpto sluoksnio (70 neuronų) bei vieno išvesties sluoksnio (1 neuronas). Paslėptajame sluoksnyje buvo panaudota sigmoidinė aktyvavimo funkcija, tuo tarpu išvesties sluoksnyje aktyvavimo funkcija pritaikyta nebuvo. Pastarasis sprendimas buvo priimtas dėl priežasties, kad dirbtinis neuroninis tinklas buvo pritaikytas spręsti regresijos uždavinį.
+            Darbo metu buvo sukurtas modelis, sudarytas iš vieno įvesties sluoksnio (4 neuronai), vieno paslėpto sluoksnio (70 neuronų) bei vieno išvesties sluoksnio (1 neuronas). Paslėptajame sluoksnyje buvo panaudota sigmoidinė aktyvavimo funkcija, tuo tarpu išvesties sluoksnyje aktyvavimo funkcija pritaikyta nebuvo. Pastarasis sprendimas buvo priimtas dėl priežasties, kad dirbtinis neuroninis tinklas buvo pritaikytas spręsti regresijos uždavinį.
 
             Bandymų metu buvo pastebėta, kad geriausius rezultatus validacijos metu dirbtinio neuroninio tinklo modelis grąžina, kai mokymosi greitis yra $0,01$, o mokymosi bei validavimo aibės yra padalintos į dalis po 8 įrašus.
 
@@ -33,44 +33,30 @@
 
         \subsubsection{Rezultatai}
             
-            Žemiau pateiktose \ref{tbl:fnn_sferos_funkc_svarus} ir \ref{tbl:fnn_sferos_funkc_su_triuksmu} lentelėse yra matomi dirbtinio neuroninio tinklo rezultatai su sferos funkcijos generuotais duomenimis.
+            Nagrinėjant modelio rezultatus su švariais duomenim (\ref{tbl:fnn_sferos_funkc_svarus} lentelė) matome, kad, didžiąja dalimi, didinant taškų kiekį, modelio absoliutinės paklaidos vidurkis ir standartinis nuokrypis mažėjo. Išsiskiria tik atvejis su 1~000~000 taškų aibe - modelis grąžino blogesnius rezultatus lyginant su rezultatais, gautais naudojant 100~000 taškų aibę. Žvelgiant į standartinio nuokrypio reikšmes, matome analogišką dėsningumą.
 
+            Lyginant modelio rodiklius skirtingam taškų kiekiui, matyti, kad abiem gerėjimo atvejais absoliučios paklaidos vidurkis sumažėjo atitinkamai 64,7\% ir 65,1\%. Tuo tarpu standartinis nuokrypis, didinant duomenų aibės dydį nuo 1~000 iki 10~000, sumažėjo 58,1\%, o nuo 1~000 iki 100~000 – 66,6\%.        
+            
             \input{attachments/tables/fnn_sferos_funkc_svarus}
+
+            Pažvelgus į modelio rezultatus su triukšmingais duomenim (\ref{tbl:fnn_sferos_funkc_su_triuksmu} lentelė), matome kiek kitokius rezultatus. Šiuo atveju taip pat didinant aibės dydį, daugeliu atveju, absoliutinės paklaidos vidurkis mažėjo. Vienintėlis atvejis, kai didinant duomenų aibę vidurkio reikšmė suprastėjo, buvo keičiant įrašų kiekį iš 1~000 į 10~000. Kalbant apie standartinio nuokrypio reikšmes, matome, kad šis statistinis rodiklis šiuo atveju stabiliai mažėjo. 
+            
+            Atkreipus dėmesį į statistinių rodiklių pokytį keičiant duomenų aibės dydį, matyti, kad didinant taškų skaičių nuo 10~000 iki 100~000, vidurkis sumažėjo 74,8\%, o keičiant aibę iš 100~000 į 1~000~000, vidurkis sumažėjo apie 21,8\%. Tuo tarpu standartinis nuokrypis, keičiant įrašų skaičių iš 1~000 į 10~000, iš 10~000 į 100~000 bei iš 100~000 į 1~000~000, sumažėjo atitinkamai 35,7\%, 65,8\% ir 33,7\%.
+            
             \input{attachments/tables/fnn_sferos_funkc_su_triuksmu}
 
-
-
-    % \subsection{Dirbtinio neuroninio tinklo rezultatai}
-
-
-    % \subsubsection{Sferos funkcija}
-
-    %     \subsubsubsection{Švarūs duomenys}
-
-
-    %         Matome, kad didinant taškų kiekį nuo 1~000 iki 100~000, modelio daromų paklaidų vidurkis ir standartinis nuokrypis mažėjo, taigi galime teigti, kad modelio tikslumas didėjo. Tačiau verta atkreipti dėmesį, kad padidinus taškų aibės dydį iki 1~000~000 modelio paklaidų statistiniai rodikliai pablogėjo.
-
-    %     \subsubsubsection{Triukšmingi duomenys}
-
-    %         Šiame bandyme buvo tiriamas neuroninio tinklo gebėjimas interpoliuoti duomenis, kurie pasižymi sferos funkcijos (\ref{lgt:sferos_funkcija} lygtis) savybėmis jiems pridėjus triukšmo.
-
-
-    %         Iš \ref{tbl:fnn_sferos_funkc_su_triuksmu} lentelės matoma, kad bendru atveju vidurkis didinant taškų kiekį mažėja. Atskiras atvejis yra, kai taškų kiekis buvo padidintas iki 10~000 - tuo atveju absoliutinės paklaidos vidurkis padidėjo.
-
-    %     \subsubsubsection{Palyginimas}
-
-    %         Matome, kad modelio absoliutinės paklaidos vidurkis arba ženkliai nesikeitė, arba paklaidos vidurkio padidėjimas svyravo nuo 1.1 iki 3.4 kartų. Standartinio nuokrypis taip pat arba nerodė didelių pakitimų, arba paklaidos standartinio nuokrypio padidėjimas svyravo nuo 1.6 iki 2.4.
-
+            Vertinant modelio tikslumo pokytį tarp švarios ir triukšmingos duomenų aibių, matyti, kad mažiausią įtaką triukšmas turėjo duomenų aibei su 1~000~000 taškų – modelio absoliučios paklaidos vidurkis padidėjo 0,9\%, o standartinis nuokrypis – 1,8\%. Šiek tiek didesni pokyčiai stebimi bandymuose su 1~000 įrašų duomenų aibe, kur vidurkis padidėjo 11,1\%, o standartinis nuokrypis – 55,1\%. Didžiausi pakitimai pastebimi nagrinėjant 10~000 ir 100~000 įrašų duomenų aibes: šiose aibėse vidurkis padidėjo atitinkamai 240\% ir 146,3\%, o standartinis nuokrypis – 138,4\% ir 144,1\%.
+    
     \subsection{Bandymai su k artimiausių kaimynų metodu}
 
         \subsubsection{Modeliai}
+            
+            Dirbtinio neuroninio tinklo įvertinimui tos pačios duomenų aibės buvo panaudotos ir su k artimiausių kaimynų metodu. 85\% kiekvienos duomenų aibės įrašų buvo skiriami duomenų saugojimui ir validavimui, o likę 15\% – modelio testavimui. Modeliai buvo validuojami pasitelkiant kryžminę validaciją (angl. \textit{cross-validation}). Nustatyta, kad geriausi rezultatai pasiekiami, kai kaimynų skaičius lygus 3, tačiau palyginimui buvo atlikti ir bandymai su vienu artimiausiu kaimynu.
 
         \subsubsection{Rezultatai, kai k = 1}
 
             \input{attachments/tables/nn_sferos_funkc_svarus}
             \input{attachments/tables/nn_sferos_funkc_su_triuksmu}
-
-        % Žemiau esančiose lentelėse \ref{lnt:nn_sferos_funkc_paklaidos_rodikliai} ir \ref{lnt:knn_sferos_funkc_paklaidos_rodikliai} galima pamatyti modelių spėjimų absoliutinių paklaidų statistinius rodiklius. Prieš skaičiuojant šiuos rodiklius, modelių spėjimai buvo konvertuoti į originalų duomenų mastelį. Taigi atsižvelgus, kad tyrimo metu duomenys buvo apibrėžiami sferos funkcija, maksimali galima absoliutinė paklaida šio tyrimo atveju yra 100.
 
         \subsubsection{Rezultatai, kai k = 3}
 
@@ -80,24 +66,6 @@
         % \subsection{Bandymai su k artimiausių kaimynų metodu}
 
         %     Tyrimas buvo atliktas su 1~000, 10~000, 100~000, 1~000~000 ir 10~000~000 taškų aibėmis, kurių $85\%$ buvo skiriami modelio apmokymui ir validavimui, likę $15\%$ - modelio testavimui.
-
-        %     Bandymui buvo generuojami keturmačiai duomenys ($n = 4$), kurių kiekviena komponentė buvo atsitiktinai parenkama iš intervalo $[-5; 5]$. Prieš apmokant modelį, duomenys buvo papildomai apdorojami: kiekviena vektoriaus komponentė bei sferos funkcijos reikšmės buvo normalizuojamos naudojant min–max metodą.
-
-        %     Modelis buvo validuojamas pasitelkiant kryžminę validaciją (angl. \textit{cross-validation}). Bandymų metu buvo nustatyta, kad geriausiai modelis veikia, kai kaimynų skaičius yra lygus $3$, tačiau palyginimui buvo atlikti bandymai ir kai artimiausias kaimynas yra vienas.
-
-        %     Visais atvejais prieš skaičiuojant statistinius absoliutinės paklaidos rodiklius, modelio spėjimai buvo konvertuoti į originalų duomenų mastelį. Taigi atsižvelgus, kad tyrimo metu duomenys buvo apibrėžiami sferos funkcija, maksimali galima absoliutinė paklaida šio tyrimo atveju yra 100.
-
-        %     \subsubsection{Sferos funkcija, kai k = 1}
-
-        %         \input{skyriai/praktine_dalis/knn/nn_rodikliai_0}
-        %         \input{skyriai/praktine_dalis/knn/nn_rodikliai_1}
-        %         \input{skyriai/praktine_dalis/knn/nn_palyginimas}
-
-        %     \subsubsection{Sferos funkcija, kai k = 3}
-
-        %         \input{skyriai/praktine_dalis/knn/knn_rodikliai_0}
-        %         \input{skyriai/praktine_dalis/knn/knn_rodikliai_1}
-        %         \input{skyriai/praktine_dalis/knn/knn_palyginimas}
 
         %     \subsubsection{K artimiausių kaimynų metodo rezultatų palyginimas}
 
