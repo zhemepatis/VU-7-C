@@ -5,7 +5,7 @@
     % TODO: move somwhere else
     % Prieš pereinant prie vėlesniuose skyreliuose aptariamų tyrimų ir juose rastų rezultatų, pravartu aptarti juose vartojamas sąvokas. Šio darbo kontekste laikysime, kad \enquote{epocha} tai yra modelio perėjimas per visą apmokymo duomenų aibę, o \enquote{iteracija} yra modelio svertų atnaujinimas.
 
-    \subsection{Duomenų aibės kūrimas}
+    \subsection{Duomenų aibė}
 
         Bandymams atlikti buvo generuojami keturmačiai duomenys, kurių kiekviena komponentė buvo parenkama iš intervalo $[-5; 5]$. Duomenys buvo generuoti naudojant sferos (\ref{eq:sferos_etalono_funkc} lygtis) funkciją. 
         
@@ -51,22 +51,27 @@
 
         \subsubsection{Modeliai}
             
-            Dirbtinio neuroninio tinklo įvertinimui tos pačios duomenų aibės buvo panaudotos ir su k artimiausių kaimynų metodu. 85\% kiekvienos duomenų aibės įrašų buvo skiriami duomenų saugojimui ir validavimui, o likę 15\% – modelio testavimui. Modeliai buvo validuojami pasitelkiant kryžminę validaciją (angl. \textit{cross-validation}). Nustatyta, kad geriausi rezultatai pasiekiami, kai kaimynų skaičius lygus 3, tačiau palyginimui buvo atlikti ir bandymai su vienu artimiausiu kaimynu.
+            Dirbtinio neuroninio tinklo įvertinimui tos pačios duomenų aibės buvo panaudotos ir su k artimiausių kaimynų metodu. 85\% kiekvienos duomenų aibės įrašų buvo skiriami duomenų saugojimui ir validavimui, o likę 15\% – modelio testavimui. Modeliai buvo validuojami pasitelkiant kryžminę validaciją (angl.~\textit{cross-validation}). Nustatyta, kad geriausi rezultatai pasiekiami, kai kaimynų skaičius lygus 3, tačiau palyginimui buvo atlikti ir bandymai su vienu artimiausiu kaimynu.
 
-        \subsubsection{Rezultatai, kai k = 1}
-
+        \subsubsection{Rezultatai (k = 1)}
+            
+            Tiriant modelio rezultatus su švaria duomenų aibe (\ref{tbl:nn_sferos_funkc_svarus}~lentelė), matyti, kad tiek absoliučios paklaidos vidurkis, tiek standartinis nuokrypis, didinant duomenų aibės dydį, nuosekliai mažėja. Vidurkio reikšmių pokytis išlieka gana tolygus: didžiausias sumažėjimas siekia 43,9\% (didinant duomenų aibę nuo 1~000~000 iki 10~000~000), o mažiausias – 42,6\% (didinant duomenų aibę nuo 1~000 iki 10~000). 
+            
+            Standartinio nuokrypio atveju stebima panaši tendencija, tačiau sumažėjimo skirtumai yra kiek didesni. Be to, galima pastebėti, kad lyginant didesnės apimties duomenų aibes, standartinio nuokrypio sumažėjimas didėja. Didžiausias sumažėjimas siekė 44,4\% didinant duomenų aibę nuo 1~000~000 iki 10~000~000 taškų, o mažiausias – 35,6\%, kai aibė buvo didinama nuo 1~000 iki 10~000 taškų.
+            
             \input{attachments/tables/nn_sferos_funkc_svarus}
+
+            Nagrinėjant triukšmingus duomenis (\ref{tbl:nn_sferos_funkc_su_triuksmu}~lentelė), matyti, kad absoliučios paklaidos vidurkis ir standartinis nuokrypis, didinant taškų skaičių, nuosekliai mažėja. Taip pat galima pastebėti, kad nors vidurkio sumažėjimas tarp skirtingų aibės dydžių yra santykinai tolygus, didėjant duomenų kiekiui šis pokytis palaipsniui mažėja: vidurkio pokytis sumažėjo nuo 42,6\% didinant taškų skaičių nuo 1~000 iki 10~000 iki 35,6\% didinant aibę nuo 100~000 iki 1~000~000.
+            
+            Standartinio nuokrypio rodiklis tokio dėsningumo neparodo. Didžiausias vidurkio pokytis stebimas didinant duomenų aibę nuo 10~000 iki 100~000 taškų, kai standartinis nuokrypis sumažėjo 42,3\%. Mažiausias pokytis pastebimas atveju, kai aibė buvo didinama nuo 1~000 iki 10~000 taškų – tuomet sumažėjimas siekė 36,4\%.
+            
             \input{attachments/tables/nn_sferos_funkc_su_triuksmu}
 
-        \subsubsection{Rezultatai, kai k = 3}
+            Vertinant triukšmo pridėjimo įtaką modelio tikslumui, matyti, kad poveikis vidurkio reikšmėms nuosekliai didėjo. Didžiausias triukšmo poveikis buvo nustatytas 10~000~000 taškų duomenų aibei, kur vidurkio padidėjimas siekė 24,7\%. Tuo tarpu mažiausia įtaka buvo stebima nagrinėjant 1~000 įrašų duomenų aibę, vidurkio padidėjimas buvo apytiksliai 0,7\%.
+
+            Kalbant apie standartinio nuokrypio reikšmes, didžiausias šio statistinio rodiklio padidėjimas pastebimas nagrinėjant 10~000~000 įrašų duomenų aibę – jis siekia 23,3\%. Tuo tarpu mažiausias šio rodiklio suprastėjimas stebimas 10~000 įrašų duomenų aibėje ir yra lygus 0.8\%.
+
+        \subsubsection{Rezultatai (k = 3)}
 
             \input{attachments/tables/knn_sferos_funkc_svarus}
             \input{attachments/tables/knn_sferos_funkc_su_triuksmu}
-
-        % \subsection{Bandymai su k artimiausių kaimynų metodu}
-
-        %     Tyrimas buvo atliktas su 1~000, 10~000, 100~000, 1~000~000 ir 10~000~000 taškų aibėmis, kurių $85\%$ buvo skiriami modelio apmokymui ir validavimui, likę $15\%$ - modelio testavimui.
-
-        %     \subsubsection{K artimiausių kaimynų metodo rezultatų palyginimas}
-
-        %         Palyginus metodo rezultatus, kai $k = 1$ ir $k = 3$ yra akivaizdu, kad su didesniu kaimynų kiekiu, modelis grąžina geresnius rezultatus. Taip pat matome, kad abiem atvejais, modelių grąžinami rezultatai stabiliai gerėjo.
