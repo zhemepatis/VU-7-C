@@ -73,5 +73,18 @@
 
         \subsubsection{Rezultatai (k = 3)}
 
+            Vertinant modelio rezultatus su švaria duomenų aibe, matyti, kad absoliučios paklaidos vidurkio ir standartinio nuokrypio pokyčiai, didinant duomenų aibės dydį, yra gana nuoseklūs. Vidurkio reikšmių pokytis išlieka pastovus: didžiausias sumažėjimas siekia 46,4 \% (didinant duomenų aibę nuo 10~000 iki 100~000), o mažiausias – 42,7\% (keičiant aibės dydį iš 1~000 į 10~000 įrašų).
+            
+            Standartinio nuokrypio atveju pastebima panaši tendencija: didžiausias sumažėjimas – 50,5\% – buvo pasiektas didinant aibę nuo 1~000 iki 10~000 taškų, o mažiausias – 45,43\% – didinant aibę nuo 1~000~000 iki 10~000~000.
+
             \input{attachments/tables/knn_sferos_funkc_svarus}
+
+            Analizuojant triukšmingus duomenis, galima matyti, kad vidurkio ir standartinio nuokrypio pokyčiai mažėjant duomenų aibės dydžiui yra mažiau tolygūs nei švarioje aibėje. Vidurkio sumažėjimas tarp skirtingų aibės dydžių palaipsniui mažėja: pradiniu etapu jis siekė 42,7 \%, o vėlesniame etape sumažėjo iki 38,44\%. 
+            
+            Standartinio nuokrypio pokyčiai taip pat svyruoja – didžiausias sumažėjimas buvo 50,5\%, mažiausias – 40,4 \%. Tai rodo, kad triukšmo buvimas didina modelio rezultatų kintamumą, ypač mažesnėse aibėse.
+
             \input{attachments/tables/knn_sferos_funkc_su_triuksmu}
+
+            Vertinant triukšmo įtaką modelio tikslumui, matyti, kad triukšmo poveikis vidurkiui ir standartiniam nuokrypiui didėjant duomenų kiekiui kinta netolygiai. Išsiskiria ir tai, kad su 1~000 įrašų aibe modelio absoliuotinė paklaida vidutiniškai buvo šiek tiek geresnė su triukšmingais duomenimis nei su švariais. Didžiausias vidurkio suprastėjimas buvo gautas su 10~000~000 įrašų aibe – jis siekė 18,2\%, o mažiausias suprastėjimas buvo pasiektas su 10~000 įrašų ir siekė 0,03\%.
+
+            Triukšmo įtaka standartiniam nuokrypiui yra panaši. Nors visais atvejais šio statistinio rodiklio reikšmė buvo didesnė su triukšminga aibe, pokyčiai buvo panašūs į vidurkio pokyčius. Didžiausias pokytis buvo pasiektas su 10~000~000 įrašų aibe – jis siekė 13,6\%. Mažiausias rodiklio padidėjimas buvo stebimas su 10~000 taškų duomenų aibe ir siekė 0,11\%.
