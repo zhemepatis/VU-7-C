@@ -4,32 +4,36 @@
 
         Dirbtiniai neuroniniai tinklai (angl.~\textit{Artificial Neural Networks}) - mašininio mokymosi sritis, apimanti skaitinius modelius, pasižyminčius sluoksnine architektūra (angl.~\textit{layered architecture}) bei savarankišku mokymusi, siekiant nustatyti matematinį sąryšį tarp duomenų įvesties ir numatytos išvesties. Kadangi dirbtiniai neuroniniai tinklai taip pat pasižymi netiesiškumu ir sugebėjimu apibendrinti duomenis, šie modeliai yra tinkami naudoti užduotyse, reikalaujančiose sudėtingų raštų (angl.~\textit{pattern}) atpažinimo. Šios užduotys dažniausiai yra skirstomos į dvi rūšis: klasifikavimą ir regresiją.
         
-        Klasifikavimas - užduotis, kurioje modelis iš numatytos diskrečios aibės turi kiekvienam duomenų įrašui priskirti vieną ar kelias reikšmes. Pavyzdžiui, klasifikavimo uždavinio pavyzdžiu galėtų būti klasių \enquote{katė} arba \enquote{šuo} priskyrimas pateiktoms nuotraukoms. Kitas pavyzdys galėtų būti augalo rūšies nustatymas pagal duotus konkretaus objekto parametrus: žiedo spalvą, lapų matmenis ir pan. 
-        
-        Regresijos problemą sprendžiantys modeliai yra susitelkę ties tolydžios reikšmės nustatymu. Šio tipo uždavinių pavyzdžiai yra finansų rinkos statistinių rodiklių nuspėjimas, temperatūros prognozė, remiantis istoriniais duomenimis ir t.t.
-
         Šio kursinio projektinio darbo metu buvo pasirinkta spręsti regresijos problemą, siekiant įvertinti dirbtinių neuroninių tinklų apmokymo sąlygas, kai mokymosi duomenys nėra visiškai tikslūs ir turi triukšmo.
+
+        \paragraph{Klasifikavimas}
+
+            Klasifikavimas - užduotis, kurioje modelis iš numatytos diskrečios aibės turi kiekvienam duomenų įrašui priskirti vieną ar kelias reikšmes. Pavyzdžiui, klasifikavimo uždavinio pavyzdžiu galėtų būti klasių \enquote{katė} arba \enquote{šuo} priskyrimas pateiktoms nuotraukoms. Kitas pavyzdys galėtų būti augalo rūšies nustatymas pagal duotus konkretaus objekto parametrus: žiedo spalvą, lapų matmenis ir pan. 
+        
+        \paragraph{Regresija}
+        
+            Regresijos problemą sprendžiantys modeliai yra susitelkę ties tolydžios reikšmės nustatymu. Šio tipo uždavinių pavyzdžiai yra finansų rinkos statistinių rodiklių nuspėjimas, temperatūros prognozė, remiantis istoriniais duomenimis ir t.t.
 
     \subsection{Sandara}
 
-        Dirbtiniai neuroniniai tinklai yra sudaryti iš tarpusavyje sujungtų neuronų, sudarančių tinklą. Žemiau pateiktas \ref{pav:dnt} paveikslėlis iliustruoja dirbtinių neuroninių tinklų sandarą.
+        Dirbtiniai neuroniniai tinklai yra sudaryti iš tarpusavyje sujungtų neuronų, sudarančių tinklą. Žemiau pateiktas \ref{img:dnt} paveikslėlis iliustruoja dirbtinių neuroninių tinklų sandarą.
 
         \begin{figure}[H]
             \centering
             \includegraphics[width=0.5\linewidth]{attachments/img/dnt.jpg}
             \caption{Dirbtinių neuroninių tinklų sandara}
-            \label{pav:dnt}
+            \label{img:dnt}
         \end{figure}
 
         \subsubsection{Neuronai}
 
-            Neuronas dirbtiniuose neuroniniuose tinkluose yra pagrindinė sudedamoji - tai apdorojimo vienetas (angl.~\textit{processing unit}), priimantis įvestį iš vienų neuronų ir generuojantis išvestį kitiems. Neuronai yra atsakingi už skaičiavimus, kurie padeda modeliui išgryninti sąryšį tarp duomenų įvesties ir numatomos išvesties. Šiai užduočiai atlikti neuronai pasitelkia svertinės sumos ir aktyvavimo funkcijas. Žemiau pateiktas \ref{pav:dnt_neuronas} paveikslėlis iliustruoja dirbtinių neuroninių tinklų neurono sandarą.
+            Neuronas dirbtiniuose neuroniniuose tinkluose yra pagrindinė sudedamoji - tai apdorojimo vienetas (angl.~\textit{processing unit}), priimantis įvestį iš vienų neuronų ir generuojantis išvestį kitiems. Neuronai yra atsakingi už skaičiavimus, kurie padeda modeliui išgryninti sąryšį tarp duomenų įvesties ir numatomos išvesties. Šiai užduočiai atlikti neuronai pasitelkia svertinės sumos ir aktyvavimo funkcijas. Žemiau pateiktas \ref{img:dnt_neuronas} paveikslėlis iliustruoja dirbtinių neuroninių tinklų neurono sandarą.
 
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=0.5\linewidth]{attachments/img/dnt_neuronas.jpg}
                 \caption{Neurono sudedamosios dirbtiniuose neuroniniuose tinkluose}
-                \label{pav:dnt_neuronas}
+                \label{img:dnt_neuronas}
             \end{figure}
 
             \subsubsubsection{Svertinės sumos funkcija}
@@ -73,17 +77,23 @@
 
         \subsubsection{Sluoksniai dirbtiniuose neuroniniuose tinkluose}
 
-            Dirbtiniai neuroniniai tinklai išsiskiria nuo kitų mašininio mokymosi metodų savo architektūra - neuronų tinklas yra sudarytas sluoksniais. Dažniausiai dirbtinius neuroninius tinklus sudaro vienas įvesties, vienas ar keli paslėptieji ir vienas išvesties sluoksnis. Žemiau pateiktas \ref{pav:dnt_sluoksniai} paveikslėlis iliustruoja dirbtinių neuroninių tinklų sandarą atsižvelgiant į neuronų sluoksnius.
+            Dirbtiniai neuroniniai tinklai išsiskiria nuo kitų mašininio mokymosi metodų savo architektūra - neuronų tinklas yra sudarytas sluoksniais. Dažniausiai dirbtinius neuroninius tinklus sudaro vienas įvesties, vienas ar keli paslėptieji ir vienas išvesties sluoksnis. Žemiau pateiktas \ref{img:dnt_sluoksniai} pav. iliustruoja dirbtinių neuroninių tinklų sandarą atsižvelgiant į neuronų sluoksnius.
 
             \begin{figure}[H]
                 \centering
                 \includegraphics[width=0.6\linewidth]{attachments/img/dnt_sluoksniai.jpg}
                 \caption{Dirbtinių neuroninių tinklų sluoksniai}
-                \label{pav:dnt_sluoksniai}
+                \label{img:dnt_sluoksniai}
             \end{figure}
 
-            Įvesties sluoksnis dirbtiniuose neuroniniuose tinkluose yra atsakingas už duomenų surinkimą. Neuronų skaičius šiame sluoksnyje priklauso nuo to, kokios dimensijos duomenys yra nagrinėjami, neįskaitant klasės ar spėjamos reikšmės. Taip, pavyzdžiui, turint duomenis su dviem požymiais, įvesties sluoksnyje bus du neuronai. Tuo tarpu turint šešių dimensijų duomenis, neuronų įvesties sluoksnyje bus šeši.
+            \paragraph{Įvesties sluoksnis}
 
-            Išvesties sluoksnis dirbtiniuose neuroniniuose tinkluose yra naudojamas modelio rezultatams generuoti. Neuronų kiekis šiame sluoksnyje priklauso nuo sprendžiamos užduoties tipo. Klasifikavimo uždaviniuose išvesties sluoksnio neuronų skaičius paprastai sutampa su galimų klasių skaičiumi, o kiekvieno neurono išvestis interpretuojama kaip tikimybė, kad įvesties duomenys priklauso tai klasei. Tuo tarpu regresijos uždaviniuose dažniausiai naudojamas vienas neuronas, kurio išvestis atitinka prognozuojamą reikšmę.
+                Įvesties sluoksnis dirbtiniuose neuroniniuose tinkluose yra atsakingas už duomenų surinkimą. Neuronų skaičius šiame sluoksnyje priklauso nuo to, kokios dimensijos duomenys yra nagrinėjami, neįskaitant klasės ar spėjamos reikšmės. Taip, pavyzdžiui, turint duomenis su dviem požymiais, įvesties sluoksnyje bus du neuronai. Tuo tarpu turint šešių dimensijų duomenis, neuronų įvesties sluoksnyje bus šeši.
+
+            \paragraph{Išvesties sluoksnis}
+                
+                Išvesties sluoksnis dirbtiniuose neuroniniuose tinkluose yra naudojamas modelio rezultatams generuoti. Neuronų kiekis šiame sluoksnyje priklauso nuo sprendžiamos užduoties tipo. Klasifikavimo uždaviniuose išvesties sluoksnio neuronų skaičius paprastai sutampa su galimų klasių skaičiumi, o kiekvieno neurono išvestis interpretuojama kaip tikimybė, kad įvesties duomenys priklauso tai klasei. Tuo tarpu regresijos uždaviniuose dažniausiai naudojamas vienas neuronas, kurio išvestis atitinka prognozuojamą reikšmę.
             
-            Paslėptieji sluoksniai dirbtiniuose neuroniniuose tinkluose yra skirti matematinių ryšių tarp įvesties ir išvesties nustatymui. Šiuose sluoksniuose esančių neuronų kiekis yra hiperparametras - jis yra parenkamas eksperimentiškai, analizuojant, su kuria reikšme modelis pasirodo geriausiai validacijos metu.
+            \paragraph{Paslėptieji sluoksniai}
+                
+                Paslėptieji sluoksniai dirbtiniuose neuroniniuose tinkluose yra skirti matematinių ryšių tarp įvesties ir išvesties nustatymui. Šiuose sluoksniuose esančių neuronų kiekis yra hiperparametras - jis yra parenkamas eksperimentiškai, analizuojant, su kuria reikšme modelis pasirodo geriausiai validacijos metu.
