@@ -36,31 +36,38 @@
 
         Kadangi realaus pasaulio sąlygomis surinkti duomenys retai būna tikslūs, mašininio mokymosi metodai turi gebėti gerai dirbti su duomenimis, kuriuose yra triukšmo. Dėl šios priežasties apmokant mašininio mokymosi modelius su dirbtinai generuotais duomenimis, taip pat yra duomenims pridėti tam tikrą triukšmo lygį.
 
-        \subsubsection{Gauso skirstinio metodas}
+        \subsubsection{Gauso triukšmas}
 
-            Vienas iš triukšmo pridėjimo būdų pasitelkia Gauso skirstinį.
-
-            Žemiau pateiktuose paveikslėliuose galime pamatyti, kaip $\sigma$ triukšmo parametro dydis lemia taškų išsidėstymą.
-
-            Žemiau pateiktame paveikslėlyje matome triukšmo pritaikymo pavyzdį dvimatėje erdvėje. 
+            Gauso triukšmas (angl. \textit{Gaussian Noise}) - tai triukšmas generuojamas pagal plačiai žinomą Gauso (normalųjį) skirstinį (\ref{img:gauso_triuksmas} pav.). Jis yra apibrėžiamas dviem pagrindiniais parametrais: vidurkiu ($\mu$) ir standartiniu nuokrypiu ($\sigma$). Šiame kontekste parametras $\mu$ nusako vidutinę triukšmo paklaidą, o standartinis nuokrypis $\sigma$ – vidutinį triukšmo reikšmių išsisklaidymą į abi puses nuo vidurkio.
 
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.8\linewidth]{attachments/img/triuksmo_pvz_0.png}
-                \caption{Švarių ir duomenų su triukšmu sugretinimas ($\mu = 0$, $\sigma = 0,5$)}
-                \label{pav:triuksmo_ir_svariu_duomenu_sugretinimas_0}
+                \includegraphics[width=0.7\linewidth]{attachments/img/gauso_triuksmas.png}
+                \caption{Gauso triukšmas, pritaikytas tiesinės funkcijos reikšmėms ($\mu = 0$, $\sigma = 0,5$)}
+                \label{img:gauso_triuksmas}
             \end{figure}
+
+        \subsubsection{Druskos ir pipirų triukšmas}
+
+            Druskos ir pipirų triukšmas (angl. \textit{Salt and Pepper Noise}) - tai triukšmas, pridėtas atsitiktinai parenkant duomenų aibės taškus ir jų reikšmes pakeičiant į minimalią arba maksimalią duomenų aibės reikšmę (\ref{img:druskos_ir_pipiru_triuksmas} pav.). Pritaikius šį triukšmo pridėjimo metodą, duomenyse atsiranda staigūs šuoliai. Pagrindinis šio metodo parametras yra taškų dalis, kuriai pritaikomas triukšmas ($p$).
 
             \begin{figure}[H]
                 \centering
-                \includegraphics[width=0.8\linewidth]{attachments/img/triuksmo_pvz_1.png}
-                \caption{Švarių ir duomenų su triukšmu sugretinimas ($\mu = 0$, $\sigma = 1,5$)}
-                \label{pav:triuksmo_ir_svariu_duomenu_sugretinimas_1}
+                \includegraphics[width=0.7\linewidth]{attachments/img/druskos_ir_pipiru_triuksmas.png}
+                \caption{Druskos ir pipirų triukšmas, pritaikytas tiesinės funkcijos reikšmėms ($p = 10\%$)}
+                \label{img:druskos_ir_pipiru_triuksmas}
             \end{figure}
 
-        \subsubsection{Druskos ir pipirų metodas}
+        \subsubsection{Kvantavimo triukšmas}
 
-        \subsubsection{Išlyginimo metodas}
+            Kvantavimo triukšmas (angl. \textit{Quantization Noise}) - tai triukšmas, pridedamas atsitiktinai pasirenkant aibės taškus ir supavalininant jų reikšmes (\ref{img:islyginimo_triuksmas} pav.). Šio metodo rezultatas irgi lemia nedidelius duomenų šuolius, tačiau jie yra arčiau originalių reikšmių. Šio metodo parametras yra duomenų aibės dalis, kurioms yra pritaikomas triukšmas ($p$).
+
+            \begin{figure}[H]
+                \centering
+                \includegraphics[width=0.7\linewidth]{attachments/img/islyginimo_triuksmas.png}
+                \caption{Kvantavimo triukšmas, pritaikytas tiesinės funkcijos reikšmėms ($p = 10\%$)}
+                \label{img:islyginimo_triuksmas}
+            \end{figure}
 
 
     % \subsection{Duomenų normalizavimas}
