@@ -1,13 +1,19 @@
 \section{Praktinė dalis}
 
-    Siekiant įvertinti, kaip dirbtiniai neuroniniai tinklai reaguoja į triukšmą duomenyse, buvo atlikti bandymai su sukurtu dirbtinio neuroninio tinklo modeliu. Papildomai, norint įvertinti, kiek geriau dirbtinis neuroninis tinklas susitvarko su triukšmu duomenyse, tam pačiam uždaviniui buvo pritaikyti ir keli k artimiausių kaimynų modeliai. Visi modeliai buvo pritaikyti tiek su švariom duomenų aibėm, tiek su aibėm, kuriose yra pritaikytas tam tikras triukšmo lygis.
-        
+    Siekiant įvertinti, kaip dirbtiniai neuroniniai tinklai reaguoja į triukšmą duomenyse, buvo atlikti bandymai su sukurtu dirbtinio neuroninio tinklo modeliu. Papildomai, norint įvertinti, kiek geriau dirbtinis neuroninis tinklas susitvarko su triukšmu duomenyse, tam pačiam uždaviniui buvo pritaikyti ir keli k artimiausių kaimynų modeliai. Visi modeliai buvo pritaikyti tiek su švariom duomenų aibėm, tiek su aibėm, kuriose yra pritaikytas tam tikras triukšmo lygis. 
+    
+    Praktinės dalies išeities kodas pateikiamas GitHub repozitorijoje:
+    \begin{center}
+        \url{https://github.com/zhemepatis/VU-7-C/tree/main/code}
+    \end{center}
+
     % TODO: move somwhere else
     % Prieš pereinant prie vėlesniuose skyreliuose aptariamų tyrimų ir juose rastų rezultatų, pravartu aptarti juose vartojamas sąvokas. Šio darbo kontekste laikysime, kad \enquote{epocha} tai yra modelio perėjimas per visą apmokymo duomenų aibę, o \enquote{iteracija} yra modelio svertų atnaujinimas.
 
     \subsection{Naudoti įrankiai}
-
+        
         Praktinės dalies įgyvendinimui buvo naudojami šie įrankiai:
+
         \begin{itemize}
             \item Python 3.14.2 – pagrindinė programavimo kalba
             \item Jupyter Notebooks – interaktyviam bandymų vykdymui ir rezultatų vizualizavimui
@@ -94,10 +100,26 @@
 
             Analizuojant triukšmingus duomenis, galima matyti, kad vidurkio ir standartinio nuokrypio pokyčiai mažėjant duomenų aibės dydžiui yra mažiau tolygūs nei švarioje aibėje. Vidurkio sumažėjimas tarp skirtingų aibės dydžių palaipsniui mažėja: pradiniu etapu jis siekė 42,7 \%, o vėlesniame etape sumažėjo iki 38,44\%. 
             
-            Standartinio nuokrypio pokyčiai taip pat svyruoja – didžiausias sumažėjimas buvo 50,5\%, mažiausias – 40,4 \%. Tai rodo, kad triukšmo buvimas didina modelio rezultatų kintamumą, ypač mažesnėse aibėse.
+            Standartinio nuokrypio pokyčiai taip pat svyruoja – didžiausias sumažėjimas buvo 50,5\%, mažiausias – 40,4 \%. Tai rodo, kad triukšmo buvimas didina modelio rezultatų kintamumą, ypatingai mažesnėse aibėse.
 
             \input{attachments/tables/knn_sferos_funkc_su_triuksmu}
 
             Vertinant triukšmo įtaką modelio tikslumui, matyti, kad triukšmo poveikis vidurkiui ir standartiniam nuokrypiui didėjant duomenų kiekiui kinta netolygiai. Išsiskiria ir tai, kad su 1~000 įrašų aibe modelio absoliuotinė paklaida vidutiniškai buvo šiek tiek geresnė su triukšmingais duomenimis nei su švariais. Didžiausias vidurkio suprastėjimas buvo gautas su 10~000~000 įrašų aibe – jis siekė 18,2\%, o mažiausias suprastėjimas buvo pasiektas su 10~000 įrašų ir siekė 0,03\%.
 
             Triukšmo įtaka standartiniam nuokrypiui yra panaši. Nors visais atvejais šio statistinio rodiklio reikšmė buvo didesnė su triukšminga aibe, pokyčiai buvo panašūs į vidurkio pokyčius. Didžiausias pokytis buvo pasiektas su 10~000~000 įrašų aibe – jis siekė 13,6\%. Mažiausias rodiklio padidėjimas buvo stebimas su 10~000 taškų duomenų aibe ir siekė 0,11\%.
+
+        \subsubsection{Rezultatų palyginimas}
+            
+            Atlikus bandymus su dirbtiniu neuroniniu tinklu ir k artimiausių kaimynų metodu, galima pastebėti aiškius skirtumus tarp šių modelių elgsenos, ypatingai nagrinėjant triukšmo įtaką modelių tikslumui ir stabilumui.
+
+            \paragraph{Rezultatai su švariais duomenim}
+
+                Naudojant švarias duomenų aibes, dirbtinis neuroninis tinklas visais atvejais demonstravo geresnes absoliutinės paklaidos vidurkio ir standartinio nuokrypio reikšmes. Nepaisant to, k artimiausių kaimynų metodo modeliai rodė stabilesnį šių rodiklių gerėjimą didinant duomenų aibės dydį. Priešingai, dirbtinio neuroninio tinklo atveju šių rodiklių pokyčiai buvo nestabilūs, o kai kuriais atvejais stebėtas ir jų pablogėjimas.
+                
+            \paragraph{Rezultatai su triukšmingais duomenim}
+
+                Vertinant modelių rezultatus, gautus naudojant triukšmingas duomenų aibes, pastebimos analogiškos tendencijos. Visais nagrinėtais atvejais dirbtinio neuroninio tinklo modelis pasižymėjo geresniais prognozavimo rezultatais nei k artimiausių kaimynų metodo modeliai. Vis dėlto k artimiausių kaimynų metodo atveju buvo nustatyta, kad didėjant mokymo duomenų aibės dydžiui, modelio tikslumas augo nuosekliai ir panašiu tempu.
+            
+            \paragraph{Triukšmo įtaka rezultatams}
+                
+                Lyginant modelių atsparumą triukšmui, k artimiausių kaimynų metodas demonstravo nuoseklų triukšmo poveikio didėjimą, didėjant duomenų aibės apimčiai. Tuo tarpu dirbtinio neuroninio tinklo modelis tokio nuoseklumo neparodė. Be to, dirbtinio neuroninio tinklo atveju kai kuriais atvejais buvo stebėtas reikšmingai didesnis triukšmo poveikis, lyginant su k artimiausių kaimynų metodo rezultatais.
