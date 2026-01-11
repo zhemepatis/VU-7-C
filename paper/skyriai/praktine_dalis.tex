@@ -38,7 +38,7 @@
 
         \subsubsection{Modelis}
 
-            Darbo metu buvo sukurtas modelis, sudarytas iš vieno įvesties sluoksnio (4 neuronai), vieno paslėpto sluoksnio (70 neuronų) bei vieno išvesties sluoksnio (1 neuronas). Paslėptajame sluoksnyje buvo panaudota sigmoidinė aktyvavimo funkcija, tuo tarpu išvesties sluoksnyje aktyvavimo funkcija pritaikyta nebuvo. Pastarasis sprendimas buvo priimtas dėl priežasties, kad dirbtinis neuroninis tinklas buvo pritaikytas spręsti regresijos uždavinį.
+            Darbo metu buvo sukurtas modelis, sudarytas iš vieno įvesties sluoksnio (4 neuronai), vieno paslėpto sluoksnio (70 neuronų) bei vieno išvesties sluoksnio (1 neuronas). Paslėptajame sluoksnyje buvo panaudota sigmoidinė aktyvavimo funkcija, tuo tarpu išvesties sluoksnyje aktyvavimo funkcija pritaikyta nebuvo. Tokia dirbtinio neuroninio tinklo architektūra buvo pasirinkta remiantis teorema, teigiančia, kad bet kuri tolydi funkcija gali būti aproksimuota dirbtiniu neuroniniu tinklu, turinčiu vieną paslėptą sluoksnį su netiesine sigmoidine aktyvavimo funkcija \cite{cybenko_aproximation}. 
 
             Bandymų metu buvo pastebėta, kad geriausius rezultatus validacijos metu dirbtinio neuroninio tinklo modelis grąžina, kai mokymosi greitis yra $0,01$, o mokymosi bei validavimo aibės yra padalintos į dalis po 8 įrašus.
 
