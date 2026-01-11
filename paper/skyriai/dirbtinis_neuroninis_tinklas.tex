@@ -14,7 +14,7 @@
         
             Regresijos uždavinius sprendžiantys modeliai yra skirti tolydžiųjų kintamųjų reikšmių prognozavimui. Tokio tipo uždaviniams priskiriami, pavyzdžiui, finansų rinkų statistinių rodiklių prognozavimas, temperatūros nustatymas remiantis istoriniais duomenimis bei kiti panašaus pobūdžio taikymai.
     
-        \subsection{Sandara}
+    \subsection{Sandara}
 
         Dirbtiniai neuroniniai tinklai yra sudaryti iš tarpusavyje sujungtų neuronų, sudarančių tinklą. Žemiau pateiktas \ref{img:dnt} paveikslėlis iliustruoja dirbtinių neuroninių tinklų sandarą.
 
@@ -97,3 +97,13 @@
             \paragraph{Paslėptieji sluoksniai}
                 
                 Paslėptieji sluoksniai dirbtiniuose neuroniniuose tinkluose yra skirti matematinių ryšių tarp įvesties ir išvesties nustatymui. Šiuose sluoksniuose esančių neuronų kiekis yra hiperparametras - jis yra parenkamas eksperimentiškai, analizuojant, su kuria reikšme modelis pasirodo geriausiai validacijos metu.
+
+    \subsection{Dirbtinio neuroninio tinklo apmokymas su triukšmu}
+
+        Kalbant apie triukšmo naudą dirbtinių neuroninių tinklų apmokymo kontekste, Zur ir kiti lygino triukšmo įterpimą su populiariausiomis reguliavimo technikomis, tokiomis kaip svorių mažinimas (angl.~\textit{weight decay}) ir išankstinis stabdymas (angl.~\textit{early stopping}) \cite{zur_noise_comparison}. Šis straipsnis parodė, kad triukšmo pridėjimas mokymo metu gali sumažinti persimokymą, kai kuriais atvejais pasiekiant geresnius rezultatus nei ankstyvas stabdymas, o jo poveikis modelio gebėjimui apibendrinti duomenis yra lyginamas su įprastais reguliavimo metodais. Tai patvirtina, kad triukšmo naudojimas gali būti laikomas efektyvia alternatyva arba papildomu reguliavimo įrankiu, ypač tais atvejais, kai klasikiniai metodai nepakankamai apsaugo modelį nuo persimokymo.
+
+        Kitas straipsnis pateikė teorinį paaiškinimą, kad triukšmo įterpimas į dirbtinio neuroninio tinklo neuronų aktyvavimą matematiškai atitinka tam tikrą baudą stipriai varijuojančiom funkcijos dalim, lemdamas modelių gebėjimą apibendrinti lygesnes funkcijas \cite{camuto_understanding_gaussian_noise}. Šis straipsnis parodė, kad triukšmo įterpimas mažina dirbtinio neuroninio tinklo jautrumą duomenų variacijoms ir skatinanti stabilumą bei nuoseklumą prognozėse.
+
+        Dar vienas straipsnis parodė, kad triukšmo įterpimas kartu su papildomomis baudos funkcijomis didina modelio stabilumą, išlaikant priimtiną prognozių tikslumą \cite{nguyen_training_more_robust_classification}. Šis straipsnis parodo, kad triukšmas dirbtinių neuroninių tinklų apmokymo kontekste leidžia išvengti persimokymo, o papildomos baudos leidžia kontroliuoti modelio atsparumą triukšmui, užtikrinant tikslumą.
+        
+        Apibendrinant, šie darbai patvirtina, kad triukšmo įterpimas yra veiksminga strategija modelio persimokymo mažinimui ir atsparumo didinimui. Tačiau jo efektyvumas priklauso nuo kelių veiksnių, įskaitant tinklo architektūrą, triukšmo intensyvumą, taikomas baudos funkcijas bei konkrečią uždavinio specifiką. Be to, tyrimai rodo, kad optimalūs rezultatai pasiekiami derinant triukšmo įterpimą su kitomis reguliavimo priemonėmis, leidžiančiomis užtikrinti tiek stabilumą, tiek aukštą prognozavimo tikslumą.
