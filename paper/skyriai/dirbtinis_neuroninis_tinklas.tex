@@ -2,7 +2,7 @@
 
     \subsection{Pritaikymas}
 
-        Dirbtiniai neuroniniai tinklai (angl.~\textit{Artificial Neural Networks}) - mašininio mokymosi sritis, apimanti skaitinius modelius, pasižyminčius sluoksnine architektūra (angl.~\textit{layered architecture}) bei savarankišku mokymusi, siekiant nustatyti matematinį sąryšį tarp duomenų įvesties ir numatytos išvesties. Kadangi dirbtiniai neuroniniai tinklai taip pat pasižymi netiesiškumu ir sugebėjimu apibendrinti duomenis, šie modeliai yra tinkami naudoti užduotyse, reikalaujančiose sudėtingų raštų (angl.~\textit{pattern}) atpažinimo. Šios užduotys dažniausiai yra skirstomos į dvi rūšis: klasifikavimą ir regresiją.
+        Dirbtiniai neuroniniai tinklai (angl.~\textit{Artificial Neural Networks}) - mašininio mokymosi sritis, apimanti skaitinius modelius, pasižyminčius sluoksnine architektūra (angl.~\textit{layered architecture}) bei savarankišku mokymusi, siekiant nustatyti matematinį sąryšį tarp duomenų įvesties ir numatytos išvesties \cite{gfg_ann_overview}. Kadangi dirbtiniai neuroniniai tinklai taip pat pasižymi netiesiškumu ir sugebėjimu apibendrinti duomenis, šie modeliai yra tinkami naudoti užduotyse, reikalaujančiose sudėtingų raštų (angl.~\textit{pattern}) atpažinimo. Šios užduotys dažniausiai yra skirstomos į dvi rūšis: klasifikavimą ir regresiją.
         
         Šio kursinio projektinio darbo metu buvo pasirinkta spręsti regresijos problemą, siekiant įvertinti dirbtinių neuroninių tinklų apmokymo sąlygas, kai mokymosi duomenys nėra visiškai tikslūs ir turi triukšmo.
 
@@ -49,9 +49,9 @@
 
             \subsubsubsection{Aktyvavimo funkcijos}
 
-                Dirbtiniai neuroniniai tinklai taikomi ne tik su tiesiniais, bet ir su netiesines savybes turinčiais duomenim. Jei modeliai naudotų vien svertinės sumos funkcijos apskaičiavimus, jie generuotų tik tiesines išvestis ir nebūtų tinkami atpažinti sudėtingesnius duomenų raštus. Siekiant įveikti šį apribojimą, neuroniniuose tinkluose yra naudojamos aktyvavimo funkcijos.
+                Dirbtiniai neuroniniai tinklai taikomi ne tik su tiesiniais, bet ir su netiesines savybes turinčiais duomenim. Jei modeliai naudotų vien svertinės sumos funkcijos apskaičiavimus, jie generuotų tik tiesines išvestis ir nebūtų tinkami atpažinti sudėtingesnius duomenų raštus \cite{gfg_activation_funcs}. Siekiant įveikti šį apribojimą, neuroniniuose tinkluose yra naudojamos aktyvavimo funkcijos.
 
-                Aktyvavimo funkcijos pasirinkimas priklauso nuo sprendžiamo uždavinio specifikos. Žemiau pateiktos \ref{eq:aktyvavimo_funkc_sigmoidine}, \ref{eq:aktyvavimo_funkc_hiperbolinio_tangento}, \ref{eq:aktyvavimo_funkc_relu} funkcijos yra dažniausiai neuroniniuose tinkluose naudojamos aktyvavimo funkcijos.
+                Aktyvavimo funkcijos pasirinkimas priklauso nuo sprendžiamo uždavinio specifikos. Žemiau pateiktos \ref{eq:aktyvavimo_funkc_sigmoidine}, \ref{eq:aktyvavimo_funkc_hiperbolinio_tangento}, \ref{eq:aktyvavimo_funkc_relu} funkcijos yra dažniausiai neuroniniuose tinkluose naudojamos aktyvavimo funkcijos \cite{rasamoelina_activation_funcs}.
 
                 Sigmoidinė (angl.~\textit{Sigmoid}) funkcija:
                 \begin{equation}
