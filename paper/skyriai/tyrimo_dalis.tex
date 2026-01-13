@@ -1,6 +1,6 @@
 \section{Tyrimo dalis}
 
-    Siekiant ištirti, kaip dirbtiniai neuroniniai tinklai reaguoja į triukšmą duomenyse, buvo atlikti bandymai su sukurtu dirbtinio neuroninio tinklo modeliu. Papildomai, norint įvertinti, kiek geriau dirbtinis neuroninis tinklas susitvarko su triukšmu duomenyse, tam pačiam uždaviniui buvo pritaikyti ir keli k artimiausių kaimynų modeliai. Visi modeliai buvo pritaikyti tiek su švariom duomenų aibėm, tiek su aibėm, kuriose yra pritaikytas tam tikras triukšmo lygis. 
+    Siekiant ištirti, kaip dirbtiniai neuroniniai tinklai reaguoja į triukšmą duomenyse, buvo atlikti bandymai su sukurtu dirbtinio neuroninio tinklo modeliu. Papildomai, norint įvertinti, kiek geriau dirbtinis neuroninis tinklas susitvarko su triukšmu duomenyse, tam pačiam uždaviniui buvo pritaikyti ir keli $k$ artimiausių kaimynų modeliai. Visi modeliai buvo pritaikyti tiek su švariom duomenų aibėm, tiek su aibėm, kuriose yra pritaikytas tam tikras triukšmo lygis. 
     
     Tyrimo dalies išeities kodas pateikiamas GitHub repozitorijoje:
     \begin{center}
@@ -25,7 +25,7 @@
 
         Bandymams atlikti buvo generuojami keturmačiai duomenys, kurių kiekviena komponentė buvo parenkama iš intervalo $[-5; 5]$. Duomenys buvo generuoti naudojant sferos (\ref{eq:sferos_etalono_funkc} lygtis) funkciją. 
         
-        Modeliai buvo pritaikyti skirtingo dydžio aibėms. Dirbtinis neuroninis tinklas buvo pritaikytas su 1~000, 10~000, 100~000, 1~000~000 dydžio duomenų aibėmis, tuo tarpu k artimiausių kaimynų metodas dar papildomai buvo išbandytas su aibe, turinčia 10~000~000 įrašų. 
+        Modeliai buvo pritaikyti skirtingo dydžio aibėms. Dirbtinis neuroninis tinklas buvo pritaikytas su 1~000, 10~000, 100~000, 1~000~000 dydžio duomenų aibėmis, tuo tarpu $k$ artimiausių kaimynų metodas dar papildomai buvo išbandytas su aibe, turinčia 10~000~000 įrašų. 
         
         Triukšmo pridėjimui į duomenų aibę buvo pasitelktas Gauso paskirsymo funkcijos metodas. Paklaidos buvo pridedamos prie sugeneruotų etalono funkcijų reikšmių. Triukšmas buvo generuojamos su parametrais $\mu = 0$, $\sigma = 0.5$.
 
@@ -61,11 +61,11 @@
 
             Vertinant modelio tikslumo pokytį tarp švarios ir triukšmingos duomenų aibių, matyti, kad mažiausią įtaką triukšmas turėjo duomenų aibei su 1~000~000 taškų – modelio absoliučios paklaidos vidurkis padidėjo 0,9\%, o standartinis nuokrypis – 1,8\%. Šiek tiek didesni pokyčiai stebimi bandymuose su 1~000 įrašų duomenų aibe, kur vidurkis padidėjo 11,1\%, o standartinis nuokrypis – 55,1\%. Didžiausi pakitimai pastebimi nagrinėjant 10~000 ir 100~000 įrašų duomenų aibes: šiose aibėse vidurkis padidėjo atitinkamai 240\% ir 146,3\%, o standartinis nuokrypis – 138,4\% ir 144,1\%.
     
-    \subsection{Bandymai su k artimiausių kaimynų metodu}
+    \subsection{Bandymai su $k$ artimiausių kaimynų metodu}
 
         \subsubsection{Modeliai}
             
-            Dirbtinio neuroninio tinklo įvertinimui tos pačios duomenų aibės buvo panaudotos ir su k artimiausių kaimynų metodu. 85\% kiekvienos duomenų aibės įrašų buvo skiriami duomenų saugojimui ir validavimui, o likę 15\% – modelio testavimui. Modeliai buvo validuojami pasitelkiant kryžminę validaciją (angl.~\textit{cross-validation}). Nustatyta, kad geriausi rezultatai pasiekiami, kai kaimynų skaičius lygus 3, tačiau palyginimui buvo atlikti ir bandymai su vienu artimiausiu kaimynu.
+            Dirbtinio neuroninio tinklo įvertinimui tos pačios duomenų aibės buvo panaudotos ir su $k$ artimiausių kaimynų metodu. 85\% kiekvienos duomenų aibės įrašų buvo skiriami duomenų saugojimui ir validavimui, o likę 15\% – modelio testavimui. Modeliai buvo validuojami pasitelkiant kryžminę validaciją (angl.~\textit{cross-validation}). Nustatyta, kad geriausi rezultatai pasiekiami, kai kaimynų skaičius lygus 3, tačiau palyginimui buvo atlikti ir bandymai su vienu artimiausiu kaimynu.
 
         \subsubsection{Rezultatai (k = 1)}
             
@@ -105,16 +105,16 @@
 
         \subsubsection{Rezultatų palyginimas}
             
-            Atlikus bandymus su dirbtiniu neuroniniu tinklu ir k artimiausių kaimynų metodu, galima pastebėti aiškius skirtumus tarp šių modelių elgsenos, ypatingai nagrinėjant triukšmo įtaką modelių tikslumui ir stabilumui.
+            Atlikus bandymus su dirbtiniu neuroniniu tinklu ir $k$ artimiausių kaimynų metodu, galima pastebėti aiškius skirtumus tarp šių modelių elgsenos, ypatingai nagrinėjant triukšmo įtaką modelių tikslumui ir stabilumui.
 
             \paragraph{Rezultatai su švariais duomenim}
 
-                Naudojant švarias duomenų aibes, dirbtinis neuroninis tinklas visais atvejais demonstravo geresnes absoliutinės paklaidos vidurkio ir standartinio nuokrypio reikšmes. Nepaisant to, k artimiausių kaimynų metodo modeliai rodė stabilesnį šių rodiklių gerėjimą didinant duomenų aibės dydį. Priešingai, dirbtinio neuroninio tinklo atveju šių rodiklių pokyčiai buvo nestabilūs, o kai kuriais atvejais stebėtas ir jų pablogėjimas.
+                Naudojant švarias duomenų aibes, dirbtinis neuroninis tinklas visais atvejais demonstravo geresnes absoliutinės paklaidos vidurkio ir standartinio nuokrypio reikšmes. Nepaisant to, $k$ artimiausių kaimynų metodo modeliai rodė stabilesnį šių rodiklių gerėjimą didinant duomenų aibės dydį. Priešingai, dirbtinio neuroninio tinklo atveju šių rodiklių pokyčiai buvo nestabilūs, o kai kuriais atvejais stebėtas ir jų pablogėjimas.
                 
             \paragraph{Rezultatai su triukšmingais duomenim}
 
-                Vertinant modelių rezultatus, gautus naudojant triukšmingas duomenų aibes, pastebimos analogiškos tendencijos. Visais nagrinėtais atvejais dirbtinio neuroninio tinklo modelis pasižymėjo geresniais prognozavimo rezultatais nei k artimiausių kaimynų metodo modeliai. Vis dėlto k artimiausių kaimynų metodo atveju buvo nustatyta, kad didėjant mokymo duomenų aibės dydžiui, modelio tikslumas augo nuosekliai ir panašiu tempu.
+                Vertinant modelių rezultatus, gautus naudojant triukšmingas duomenų aibes, pastebimos analogiškos tendencijos. Visais nagrinėtais atvejais dirbtinio neuroninio tinklo modelis pasižymėjo geresniais prognozavimo rezultatais nei $k$ artimiausių kaimynų metodo modeliai. Vis dėlto $k$ artimiausių kaimynų metodo atveju buvo nustatyta, kad didėjant mokymo duomenų aibės dydžiui, modelio tikslumas augo nuosekliai ir panašiu tempu.
             
             \paragraph{Triukšmo įtaka rezultatams}
                 
-                Lyginant modelių atsparumą triukšmui, k artimiausių kaimynų metodas demonstravo nuoseklų triukšmo poveikio didėjimą, didėjant duomenų aibės apimčiai. Tuo tarpu dirbtinio neuroninio tinklo modelis tokio nuoseklumo neparodė. Be to, dirbtinio neuroninio tinklo atveju kai kuriais atvejais buvo stebėtas reikšmingai didesnis triukšmo poveikis, lyginant su k artimiausių kaimynų metodo rezultatais.
+                Lyginant modelių atsparumą triukšmui, $k$ artimiausių kaimynų metodas demonstravo nuoseklų triukšmo poveikio didėjimą, didėjant duomenų aibės apimčiai. Tuo tarpu dirbtinio neuroninio tinklo modelis tokio nuoseklumo neparodė. Be to, dirbtinio neuroninio tinklo atveju kai kuriais atvejais buvo stebėtas reikšmingai didesnis triukšmo poveikis, lyginant su $k$ artimiausių kaimynų metodo rezultatais.
