@@ -1,4 +1,4 @@
-\section{Praktinė dalis}
+\section{Tyrimo dalis}
 
     Siekiant įvertinti, kaip dirbtiniai neuroniniai tinklai reaguoja į triukšmą duomenyse, buvo atlikti bandymai su sukurtu dirbtinio neuroninio tinklo modeliu. Papildomai, norint įvertinti, kiek geriau dirbtinis neuroninis tinklas susitvarko su triukšmu duomenyse, tam pačiam uždaviniui buvo pritaikyti ir keli k artimiausių kaimynų modeliai. Visi modeliai buvo pritaikyti tiek su švariom duomenų aibėm, tiek su aibėm, kuriose yra pritaikytas tam tikras triukšmo lygis. 
     
@@ -27,7 +27,7 @@
         
         Modeliai buvo pritaikyti skirtingo dydžio aibėms. Dirbtinis neuroninis tinklas buvo pritaikytas su 1~000, 10~000, 100~000, 1~000~000 dydžio duomenų aibėmis, tuo tarpu k artimiausių kaimynų metodas dar papildomai buvo išbandytas su aibe, turinčia 10~000~000 įrašų. 
         
-        Triukšmo pridėjimui į duomenų aibę buvo pasitelktas Gauso paskirsymo funkcijos metodas. Triukšmas buvo generuojamos su parametrais $\mu = 0$, $\sigma = 0.5$.
+        Triukšmo pridėjimui į duomenų aibę buvo pasitelktas Gauso paskirsymo funkcijos metodas. Paklaidos buvo pridedamos prie sugeneruotų etalono funkcijų reikšmių. Triukšmas buvo generuojamos su parametrais $\mu = 0$, $\sigma = 0.5$.
 
         Prieš apmokant dirbtinio neuroninio tinklos modelį duomenys buvo normalizuojami min-max metodu. Perėjus prie modelio statistinių rodiklių įvertinimo duomenys buvo grąžinami į pradinį duomenų mąstelį. Tad atsižvelgus į tai, kad duomenys buvo generuoti sferos funkcija prognozės absoliutinė paklaida įeina į intervalą $[0; 100].$
 
@@ -57,11 +57,11 @@
 
             Pažvelgus į modelio rezultatus su triukšmingais duomenim (\ref{tbl:fnn_sferos_funkc_su_triuksmu} lentelė), matome kiek kitokius rezultatus. Šiuo atveju taip pat didinant aibės dydį, daugeliu atveju, absoliutinės paklaidos vidurkis mažėjo. Vienintėlis atvejis, kai didinant duomenų aibę vidurkio reikšmė suprastėjo, buvo keičiant įrašų kiekį iš 1~000 į 10~000. Kalbant apie standartinio nuokrypio reikšmes, matome, kad šis statistinis rodiklis šiuo atveju stabiliai mažėjo. 
             
-            Atkreipus dėmesį į statistinių rodiklių pokytį keičiant duomenų aibės dydį, matyti, kad didinant taškų skaičių nuo 10~000 iki 100~000, vidurkis sumažėjo 62,1\%, o keičiant aibę iš 100~000 į 1~000~000, vidurkis sumažėjo apie 21,9\%. Tuo tarpu standartinis nuokrypis, keičiant įrašų skaičių iš 1~000 į 10~000, iš 10~000 į 100~000 bei iš 100~000 į 1~000~000, sumažėjo atitinkamai 2,2\%, 54,6\% ir 27,2\%.
+            Atkreipus dėmesį į statistinių rodiklių pokytį keičiant duomenų aibės dydį, matyti, kad didinant taškų skaičių nuo 10~000 iki 100~000, vidurkis sumažėjo 74,8\%, o keičiant aibę iš 100~000 į 1~000~000, vidurkis sumažėjo apie 21,8\%. Tuo tarpu standartinis nuokrypis, keičiant įrašų skaičių iš 1~000 į 10~000, iš 10~000 į 100~000 bei iš 100~000 į 1~000~000, sumažėjo atitinkamai 35,7\%, 65,8\% ir 33,7\%.
             
             \input{attachments/tables/fnn_sferos_funkc_su_triuksmu}
 
-            Vertinant modelio tikslumo pokytį tarp švarios ir triukšmingos duomenų aibių, matyti, kad mažiausią įtaką triukšmas turėjo duomenų aibei su 1~000 taškų – modelio absoliučios paklaidos vidurkis padidėjo 59,4\%, o standartinis nuokrypis – 87,2\%. Didesni pokyčiai stebimi bandymuose su 1~000~000 įrašų duomenų aibe, kur vidurkis padidėjo 150\%, o standartinis nuokrypis – 171,8\%. Didžiausi pakitimai pastebimi nagrinėjant 10~000 ir 100~000 įrašų duomenų aibes: šiose aibėse vidurkis padidėjo atitinkamai 461,2\% ir 511,1\%, o standartinis nuokrypis – 337,9\% ir 494\%.
+            Vertinant modelio tikslumo pokytį tarp švarios ir triukšmingos duomenų aibių, matyti, kad mažiausią įtaką triukšmas turėjo duomenų aibei su 1~000~000 taškų – modelio absoliučios paklaidos vidurkis padidėjo 0,9\%, o standartinis nuokrypis – 1,8\%. Šiek tiek didesni pokyčiai stebimi bandymuose su 1~000 įrašų duomenų aibe, kur vidurkis padidėjo 11,1\%, o standartinis nuokrypis – 55,1\%. Didžiausi pakitimai pastebimi nagrinėjant 10~000 ir 100~000 įrašų duomenų aibes: šiose aibėse vidurkis padidėjo atitinkamai 240\% ir 146,3\%, o standartinis nuokrypis – 138,4\% ir 144,1\%.
     
     \subsection{Bandymai su k artimiausių kaimynų metodu}
 
@@ -77,15 +77,15 @@
             
             \input{attachments/tables/nn_sferos_funkc_svarus}
 
-            Nagrinėjant triukšmingus duomenis (\ref{tbl:nn_sferos_funkc_su_triuksmu}~lentelė), matyti, kad absoliučios paklaidos vidurkis ir standartinis nuokrypis, didinant taškų skaičių, nuosekliai mažėja. Taip pat galima pastebėti, kad didinant taškų kiekį aibėje, rodiklių gerėjimas palaipsniui mažėja: vidurkio pokytis sumažėjo nuo 26,5\% didinant taškų skaičių nuo 1~000 iki 10~000 iki 1,29\% didinant aibę nuo 100~000 iki 1~000~000.
+            Nagrinėjant triukšmingus duomenis (\ref{tbl:nn_sferos_funkc_su_triuksmu}~lentelė), matyti, kad absoliučios paklaidos vidurkis ir standartinis nuokrypis, didinant taškų skaičių, nuosekliai mažėja. Taip pat galima pastebėti, kad nors vidurkio sumažėjimas tarp skirtingų aibės dydžių yra santykinai tolygus, didėjant duomenų kiekiui šis pokytis palaipsniui mažėja: vidurkio pokytis sumažėjo nuo 42,6\% didinant taškų skaičių nuo 1~000 iki 10~000 iki 35,6\% didinant aibę nuo 100~000 iki 1~000~000.
             
-            Standartinio nuokrypio rodiklis taip pat pasižymi šiuo dėsningumu. Didžiausias vidurkio pokytis stebimas didinant duomenų aibę nuo 1~000 iki 10~000 taškų, kai standartinis nuokrypis sumažėjo 22,2\%. Mažiausias pokytis pastebimas atveju, kai aibė buvo didinama nuo 100~000 iki 1~000~000 taškų – tuomet sumažėjimas siekė 1,3\%.
+            Standartinio nuokrypio rodiklis tokio dėsningumo neparodo. Didžiausias vidurkio pokytis stebimas didinant duomenų aibę nuo 10~000 iki 100~000 taškų, kai standartinis nuokrypis sumažėjo 42,3\%. Mažiausias pokytis pastebimas atveju, kai aibė buvo didinama nuo 1~000 iki 10~000 taškų – tuomet sumažėjimas siekė 36,4\%.
             
             \input{attachments/tables/nn_sferos_funkc_su_triuksmu}
 
-            Vertinant triukšmo pridėjimo įtaką modelio tikslumui, matyti, kad poveikis vidurkio reikšmėms nuosekliai didėjo. Didžiausias triukšmo poveikis buvo nustatytas 10~000~000 taškų duomenų aibei, kur vidurkio padidėjimas siekė 750,7\%. Tuo tarpu mažiausia įtaka buvo stebima nagrinėjant 1~000 įrašų duomenų aibę, vidurkio padidėjimas buvo apytiksliai 38,9\%.
+            Vertinant triukšmo pridėjimo įtaką modelio tikslumui, matyti, kad poveikis vidurkio reikšmėms nuosekliai didėjo. Didžiausias triukšmo poveikis buvo nustatytas 10~000~000 taškų duomenų aibei, kur vidurkio padidėjimas siekė 24,7\%. Tuo tarpu mažiausia įtaka buvo stebima nagrinėjant 1~000 įrašų duomenų aibę, vidurkio padidėjimas buvo apytiksliai 0,7\%.
 
-            Kalbant apie standartinio nuokrypio reikšmes, didžiausias šio statistinio rodiklio padidėjimas pastebimas nagrinėjant 10~000~000 įrašų duomenų aibę – jis siekia 814,3\%. Tuo tarpu mažiausias šio rodiklio suprastėjimas stebimas 10~000 įrašų duomenų aibėje ir yra lygus 54,7\%.
+            Kalbant apie standartinio nuokrypio reikšmes, didžiausias šio statistinio rodiklio padidėjimas pastebimas nagrinėjant 10~000~000 įrašų duomenų aibę – jis siekia 23,3\%. Tuo tarpu mažiausias šio rodiklio suprastėjimas stebimas 10~000 įrašų duomenų aibėje ir yra lygus 0.8\%.
 
         \subsubsection{Rezultatai (k = 3)}
 
@@ -95,15 +95,15 @@
 
             \input{attachments/tables/knn_sferos_funkc_svarus}
 
-            Analizuojant triukšmingus duomenis, galima matyti, kad vidurkio ir standartinio nuokrypio pokyčiai mažėjant duomenų aibės dydžiui yra mažiau tolygūs nei švarioje aibėje. Vidurkio sumažėjimas tarp skirtingų aibės dydžių palaipsniui mažėja: didinant taškų kiekį nuo 1~000 iki 10~000 etapu sumažėjimas siekė 36,2 \%, o vėlesniame etape sumažėjo iki 1,7\%. 
+            Analizuojant triukšmingus duomenis, galima matyti, kad vidurkio ir standartinio nuokrypio pokyčiai mažėjant duomenų aibės dydžiui yra mažiau tolygūs nei švarioje aibėje. Vidurkio sumažėjimas tarp skirtingų aibės dydžių palaipsniui mažėja: pradiniu etapu jis siekė 42,7 \%, o vėlesniame etape sumažėjo iki 38,44\%. 
             
-            Standartinio nuokrypio taip pat pasižymi savybe, kad didinant duomenų aibės dydį, šio rodiklio pokytis palaipsniui mažėja. Didžiausias absoliučiosios paklaidos standartinio nuokrypio sumažėjimas - 34,6\% - pastebimas keičiant aibę iš 1~000 į 10~000 taškų. Tuo tarpu mažiausias pokytis pastebimas keičiant aibės dydį iš 1~000~000 įrašų į 10~000~000, jis siekė 1,4\%. 
+            Standartinio nuokrypio pokyčiai taip pat svyruoja – didžiausias sumažėjimas buvo 50,5\%, mažiausias – 40,4 \%. Tai rodo, kad triukšmo buvimas didina modelio rezultatų kintamumą, ypatingai mažesnėse aibėse.
 
             \input{attachments/tables/knn_sferos_funkc_su_triuksmu}
 
-            Vertinant triukšmo įtaką modelio tikslumui, matyti, kad triukšmo poveikis vidurkiui ir standartiniam nuokrypiui skirtingo dydžio duomenų aibėms yra nevienodas. Didžiausias vidurkio suprastėjimas buvo gautas su 10~000~000 įrašų aibe – jis siekė 631,9\%, o mažiausias suprastėjimas buvo pasiektas su 1~000 įrašų ir siekė 29,6\%.
+            Vertinant triukšmo įtaką modelio tikslumui, matyti, kad triukšmo poveikis vidurkiui ir standartiniam nuokrypiui didėjant duomenų kiekiui kinta netolygiai. Išsiskiria ir tai, kad su 1~000 įrašų aibe modelio absoliuotinė paklaida vidutiniškai buvo šiek tiek geresnė su triukšmingais duomenimis nei su švariais. Didžiausias vidurkio suprastėjimas buvo gautas su 10~000~000 įrašų aibe – jis siekė 18,2\%, o mažiausias suprastėjimas buvo pasiektas su 10~000 įrašų ir siekė 0,03\%.
 
-            Triukšmo įtaka standartiniam nuokrypiui yra panaši. Didžiausias pokytis buvo pasiektas su 10~000~000 įrašų aibe – jis siekė 626,4\%. Mažiausias rodiklio padidėjimas buvo stebimas su 1~000 taškų duomenų aibe ir siekė 8,2\%.
+            Triukšmo įtaka standartiniam nuokrypiui yra panaši. Nors visais atvejais šio statistinio rodiklio reikšmė buvo didesnė su triukšminga aibe, pokyčiai buvo panašūs į vidurkio pokyčius. Didžiausias pokytis buvo pasiektas su 10~000~000 įrašų aibe – jis siekė 13,6\%. Mažiausias rodiklio padidėjimas buvo stebimas su 10~000 taškų duomenų aibe ir siekė 0,11\%.
 
         \subsubsection{Rezultatų palyginimas}
             
@@ -115,8 +115,8 @@
                 
             \paragraph{Rezultatai su triukšmingais duomenim}
 
-                Vertinant modelių rezultatus, gautus naudojant triukšmingas duomenų aibes, pastebimos panašios tendencijos. Daugeliu atvejų nagrinėtas dirbtinio neuroninio tinklo modelis pasižymėjo geresniais prognozavimo rezultatais nei k artimiausių kaimynų metodas. Vis dėlto pastarasis metodas parodė tam tikrą dėsningumą: didėjant duomenų kiekiui, modelio tikslumo pagerėjimas mažėja, tuo tarpu dirbtinio neuroninio tinklo tikslumo pokyčiai buvo neprognozuojami.
-                            
+                Vertinant modelių rezultatus, gautus naudojant triukšmingas duomenų aibes, pastebimos analogiškos tendencijos. Visais nagrinėtais atvejais dirbtinio neuroninio tinklo modelis pasižymėjo geresniais prognozavimo rezultatais nei k artimiausių kaimynų metodo modeliai. Vis dėlto k artimiausių kaimynų metodo atveju buvo nustatyta, kad didėjant mokymo duomenų aibės dydžiui, modelio tikslumas augo nuosekliai ir panašiu tempu.
+            
             \paragraph{Triukšmo įtaka rezultatams}
                 
-                Lyginant modelių atsparumą triukšmui, k artimiausių kaimynų metodas demonstravo nuoseklų triukšmo poveikio didėjimą, didėjant duomenų aibės apimčiai. Tuo tarpu dirbtinio neuroninio tinklo modelis tokio nuoseklumo neparodė.
+                Lyginant modelių atsparumą triukšmui, k artimiausių kaimynų metodas demonstravo nuoseklų triukšmo poveikio didėjimą, didėjant duomenų aibės apimčiai. Tuo tarpu dirbtinio neuroninio tinklo modelis tokio nuoseklumo neparodė. Be to, dirbtinio neuroninio tinklo atveju kai kuriais atvejais buvo stebėtas reikšmingai didesnis triukšmo poveikis, lyginant su k artimiausių kaimynų metodo rezultatais.
