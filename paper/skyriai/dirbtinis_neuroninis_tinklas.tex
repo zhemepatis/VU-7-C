@@ -1,12 +1,12 @@
 \section{Dirbtiniai neuroniniai tinklai}
 
-        Dirbtiniai neuroniniai tinklai (angl.~\textit{Artificial Neural Networks}) - mašininio mokymosi sritis, apimanti skaitinius modelius, pasižyminčius sluoksnine architektūra (angl.~\textit{layered architecture}) bei mokymusi, siekiant aproksimuoti matematinį sąryšį tarp duomenų įvesties ir numatytos išvesties \cite{gfg_ann_overview}. Kadangi dirbtiniai neuroniniai tinklai taip pat pasižymi netiesiškumu ir sugebėjimu apibendrinti duomenis, šie modeliai yra tinkami naudoti užduotyse, reikalaujančiose sudėtingų šablonų (angl.~\textit{pattern}) atpažinimo. Šios užduotys yra skirstomos į dvi rūšis: klasifikavimą ir regresiją.
+        Dirbtiniai neuroniniai tinklai (angl.~\textit{Artificial Neural Networks}) -- mašininio mokymosi sritis, apimanti skaitinius modelius, pasižyminčius sluoksnine architektūra (angl.~\textit{layered architecture}) bei mokymusi, siekiant aproksimuoti matematinį sąryšį tarp duomenų įvesties ir numatytos išvesties \cite{gfg_ann_overview}. Kadangi dirbtiniai neuroniniai tinklai taip pat pasižymi netiesiškumu ir sugebėjimu apibendrinti duomenis, šie modeliai yra tinkami naudoti užduotyse, reikalaujančiose sudėtingų šablonų (angl.~\textit{pattern}) atpažinimo. Šios užduotys yra skirstomos į dvi rūšis: klasifikavimą ir regresiją.
         
         Šio kursinio projektinio darbo metu buvo pasirinkta spręsti regresijos problemą, siekiant įvertinti dirbtinių neuroninių tinklų apmokymo sąlygas, kai mokymosi duomenys nėra visiškai tikslūs ir turi triukšmo.
 
         \paragraph{Klasifikavimas}
 
-            Klasifikavimas - užduotis, kurioje modelis iš numatytos diskrečios aibės turi kiekvienam duomenų įrašui priskirti vieną ar kelias reikšmes. Pavyzdžiui, klasifikavimo uždavinio pavyzdžiu galėtų būti klasių \enquote{katė} arba \enquote{šuo} priskyrimas pateiktoms nuotraukoms. Kitas pavyzdys galėtų būti augalo rūšies nustatymas pagal duotus konkretaus objekto parametrus: žiedo spalvą, lapų matmenis ir pan. 
+            Klasifikavimas -- užduotis, kurioje modelis iš numatytos diskrečios aibės turi kiekvienam duomenų įrašui priskirti vieną ar kelias reikšmes. Pavyzdžiui, klasifikavimo uždavinio pavyzdžiu galėtų būti klasių \enquote{katė} arba \enquote{šuo} priskyrimas pateiktoms nuotraukoms. Kitas pavyzdys galėtų būti augalo rūšies nustatymas pagal duotus konkretaus objekto parametrus: žiedo spalvą, lapų matmenis ir pan. 
         
         \paragraph{Regresija}
         
@@ -25,7 +25,7 @@
 
         \subsubsection{Neuronai}
 
-            Neuronas dirbtiniuose neuroniniuose tinkluose yra pagrindinė sudedamoji - tai apdorojimo vienetas (angl.~\textit{processing unit}), priimantis įvestį iš vienų neuronų ir generuojantis išvestį kitiems. Neuronai yra atsakingi už skaičiavimus, kurie padeda modeliui išgryninti sąryšį tarp duomenų įvesties ir numatomos išvesties. Šiai užduočiai atlikti neuronai pasitelkia svertinės sumos ir aktyvavimo funkcijas. Žemiau pateiktas \ref{img:dnt_neuronas} paveikslėlis iliustruoja dirbtinių neuroninių tinklų neurono sandarą.
+            Neuronas dirbtiniuose neuroniniuose tinkluose yra pagrindinė sudedamoji -- tai apdorojimo vienetas (angl.~\textit{processing unit}), priimantis įvestį iš vienų neuronų ir generuojantis išvestį kitiems. Neuronai yra atsakingi už skaičiavimus, kurie padeda modeliui išgryninti sąryšį tarp duomenų įvesties ir numatomos išvesties. Šiai užduočiai atlikti neuronai pasitelkia svertinės sumos ir aktyvavimo funkcijas. Žemiau pateiktas \ref{img:dnt_neuronas} paveikslėlis iliustruoja dirbtinių neuroninių tinklų neurono sandarą.
 
             \begin{figure}[H]
                 \centering
@@ -36,12 +36,12 @@
 
             \subsubsubsection{Svertinės sumos funkcija}
 
-                Kaip jau buvo minėta neuronai tarpusavyje yra sujungti ir taip sudaro tinklą. Kiekviena jungtis tarp neuronų yra apibūdinama svoriu - skaitine reikšme, nusakančia, kokio dydžio įtaką vienas neuronas turi kitam. Šios reikšmės yra naudojamos svertinės sumos funkcijos reikšmei apskaičiuoti, kurios pavidalas yra
+                Kaip jau buvo minėta neuronai tarpusavyje yra sujungti ir taip sudaro tinklą. Kiekviena jungtis tarp neuronų yra apibūdinama svoriu -- skaitine reikšme, nusakančia, kokio dydžio įtaką vienas neuronas turi kitam. Šios reikšmės yra naudojamos svertinės sumos funkcijos reikšmei apskaičiuoti, kurios pavidalas yra
                 \begin{equation}
                     \label{eq:svertines_sumos_funkc}
                     z = \sum_{i=0}^{n} x_i \cdot w_i + b
                 \end{equation}
-                Čia $z$ - svertinės sumos reikšmė, $x_i$ - i-ojo neurono įvestis nagrinėjama neuronui, $w_i$ - i-ojo neurono svoris, susijęs su nagrinėjamu neuronu, $b$ - šališkumo (angl.~\textit{bias}) reikšmė.
+                Čia $z$ -- svertinės sumos reikšmė, $x_i$ -- i-ojo neurono įvestis nagrinėjama neuronui, $w_i$ -- i-ojo neurono svoris, susijęs su nagrinėjamu neuronu, $b$ -- šališkumo (angl.~\textit{bias}) reikšmė.
 
                 Ši funkcija yra reikalinga tam, kad neuronas galėtų apibendrinti visas gautas įvestis į vieną skaitinę vertę, kuri vėliau perduodama aktyvavimo funkcijai, jei ji yra naudojama, arba kitam neuronų sluoksniui.
 
@@ -75,7 +75,7 @@
 
         \subsubsection{Sluoksniai dirbtiniuose neuroniniuose tinkluose}
 
-            Dirbtiniai neuroniniai tinklai išsiskiria nuo kitų mašininio mokymosi metodų savo architektūra - neuronų tinklas yra sudarytas sluoksniais. Dažniausiai dirbtinius neuroninius tinklus sudaro vienas įvesties, vienas ar keli paslėptieji ir vienas išvesties sluoksnis. Žemiau pateiktas \ref{img:dnt_sluoksniai} pav. iliustruoja dirbtinių neuroninių tinklų sandarą atsižvelgiant į neuronų sluoksnius.
+            Dirbtiniai neuroniniai tinklai išsiskiria nuo kitų mašininio mokymosi metodų savo architektūra -- neuronų tinklas yra sudarytas sluoksniais. Dažniausiai dirbtinius neuroninius tinklus sudaro vienas įvesties, vienas ar keli paslėptieji ir vienas išvesties sluoksnis. Žemiau pateiktas \ref{img:dnt_sluoksniai} pav. iliustruoja dirbtinių neuroninių tinklų sandarą atsižvelgiant į neuronų sluoksnius.
 
             \begin{figure}[H]
                 \centering
@@ -94,7 +94,7 @@
             
             \paragraph{Paslėptieji sluoksniai}
                 
-                Paslėptieji sluoksniai dirbtiniuose neuroniniuose tinkluose yra skirti matematinių ryšių tarp įvesties ir išvesties nustatymui. Šiuose sluoksniuose esančių neuronų kiekis yra hiperparametras - jis yra parenkamas eksperimentiškai, analizuojant, su kuria reikšme modelis pasirodo geriausiai validacijos metu.
+                Paslėptieji sluoksniai dirbtiniuose neuroniniuose tinkluose yra skirti matematinių ryšių tarp įvesties ir išvesties nustatymui. Šiuose sluoksniuose esančių neuronų kiekis yra hiperparametras -- jis yra parenkamas eksperimentiškai, analizuojant, su kuria reikšme modelis pasirodo geriausiai validacijos metu.
 
     \subsection{Dirbtinio neuroninio tinklo apmokymas su triukšmu}
 
