@@ -1,15 +1,15 @@
 \section{Tyrimo dalis}
 
-    Siekiant įvertinti, kaip dirbtiniai neuroniniai tinklai reaguoja į triukšmą duomenyse, buvo atlikti bandymai su sukurtu dirbtinio neuroninio tinklo modeliu. Papildomai, norint įvertinti, kiek geriau dirbtinis neuroninis tinklas susitvarko su triukšmu duomenyse, tam pačiam uždaviniui buvo pritaikyti ir keli k artimiausių kaimynų modeliai. Visi modeliai buvo pritaikyti tiek su švariom duomenų aibėm, tiek su aibėm, kuriose yra pritaikytas tam tikras triukšmo lygis. 
+    Siekiant ištirti, kaip dirbtiniai neuroniniai tinklai reaguoja į triukšmą duomenyse, buvo atlikti bandymai su sukurtu dirbtinio neuroninio tinklo modeliu. Papildomai, norint įvertinti, kiek geriau dirbtinis neuroninis tinklas susitvarko su triukšmu duomenyse, tam pačiam uždaviniui buvo pritaikyti ir keli k artimiausių kaimynų modeliai. Visi modeliai buvo pritaikyti tiek su švariom duomenų aibėm, tiek su aibėm, kuriose yra pritaikytas tam tikras triukšmo lygis. 
     
-    Praktinės dalies išeities kodas pateikiamas GitHub repozitorijoje:
+    Tyrimo dalies išeities kodas pateikiamas GitHub repozitorijoje:
     \begin{center}
         \url{https://github.com/zhemepatis/VU-7-C/tree/main/code}
     \end{center}
 
     \subsection{Naudoti įrankiai}
         
-        Praktinės dalies įgyvendinimui buvo naudojami šie įrankiai:
+        Tyrimo dalies įgyvendinimui buvo naudojami šie įrankiai:
 
         \begin{itemize}
             \item Python 3.14.2 – pagrindinė programavimo kalba
@@ -37,9 +37,7 @@
 
             Darbo metu buvo sukurtas modelis, sudarytas iš vieno įvesties sluoksnio (4 neuronai), vieno paslėpto sluoksnio (70 neuronų) bei vieno išvesties sluoksnio (1 neuronas). Paslėptajame sluoksnyje buvo panaudota sigmoidinė aktyvavimo funkcija, tuo tarpu išvesties sluoksnyje aktyvavimo funkcija pritaikyta nebuvo. Tokia dirbtinio neuroninio tinklo architektūra buvo pasirinkta remiantis teorema, teigiančia, kad bet kuri tolydi funkcija gali būti aproksimuota dirbtiniu neuroniniu tinklu, turinčiu vieną paslėptą sluoksnį su netiesine sigmoidine aktyvavimo funkcija \cite{cybenko_aproximation}. 
 
-            Bandymų metu buvo pastebėta, kad geriausius rezultatus validacijos metu dirbtinio neuroninio tinklo modelis grąžina, kai mokymosi greitis yra $0,01$, o mokymosi bei validavimo aibės yra padalintos į dalis po 8 įrašus.
-
-            Modelio apmokymo etapo ilgis buvo stabdomas įvykus vienai iš stabdymo sąlygų:
+            Modelio mokymosi ilgio reikšmė buvo lygi $0,01$, o mokymosi aibė buvo padalinta į dalis po 8 įrašus. Modelio apmokymo etapas buvo stabdomas įvykus vienai iš stabdymo sąlygų:
             \begin{itemize}
                 \item klaidos funkcijos reikšmė $13$ epochų iš eilės mažėja mažiau nei per $10^{-6}$;
                 \item buvo pasiektas maksimalus $150$ epochų kiekis.
