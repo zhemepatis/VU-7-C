@@ -2,6 +2,31 @@
     
     Šiame kursiniame darbe buvo apžvelgtos pagrindinės sąvokos, susijusios su dirbtinių neuroninių tinklų kūrimu ir apmokymu. Taip pat buvo aptartas $k$ artimiausių kaimynų metodas, kuris darbe buvo taikomas dirbtinio neuroninio tinklo rezultatų įvertinimui. Be to, reikšmingas dėmesys buvo skirtas duomenų aibių sudarymui ir jų paruošimui eksperimentiniams tyrimams.
     
-    Be literatūros apžvalgos, darbe buvo atlikti tyrimai, kurių metu buvo sukurti ir pritaikyti dirbtinio neuroninio tinklo bei $k$ artimiausių kaimynų metodo modeliai. Tyrimų metu buvo analizuojama šių modelių tikslumo priklausomybė nuo mokymo duomenų aibės dydžio ir triukšmo lygio, naudojant tiek švarias, tiek triukšmingas duomenų aibes. Gauti rezultatai leido įvertinti modelių atsparumą triukšmui ir palyginti jų elgseną skirtingomis sąlygomis.
+    Atlikus bandymus su dirbtiniu neuroniniu tinklu ir $k$ artimiausių kaimynų metodu, galima pastebėti aiškius skirtumus tarp šių modelių elgsenos, ypatingai nagrinėjant triukšmo įtaką modelių tikslumui ir stabilumui:
+
+    \begin{itemize}
+        \item Rezultatai su švariais duomenim:
+            
+            \begin{itemize}
+                \item dirbtinis neuroninis tinklas visais atvejais demonstravo geresnes absoliutinės paklaidos vidurkio ir standartinio nuokrypio reikšmes;
+                \item $k$ artimiausių kaimynų metodo modeliai rodė stabilesnį rodiklių gerėjimą didinant duomenų aibės dydį;
+                \item dirbtinio neuroninio tinklo atveju rodiklių pokyčiai buvo nestabilūs, kai kuriais atvejais stebėtas jų pablogėjimas.
+            \end{itemize}
+        
+        \item Rezultatai su triukšmingais duomenim:
+            
+            \begin{itemize}
+                \item visais nagrinėtais atvejais dirbtinio neuroninio tinklo modelis pasižymėjo geresniais prognozavimo rezultatais nei $k$ artimiausių kaimynų metodo modeliai;
+                \item $k$ artimiausių kaimynų metodo atveju buvo nustatyta, kad didėjant mokymo duomenų aibės dydžiui, modelio tikslumas augo nuosekliai ir panašiu tempu.
+            \end{itemize}
+        
+        \item Triukšmo įtaka rezultatams:
+            
+            \begin{itemize}
+                \item $k$ artimiausių kaimynų metodas demonstravo nuoseklų triukšmo poveikio didėjimą, didėjant duomenų aibės apimčiai;
+                \item dirbtinio neuroninio tinklo atveju kai kuriais atvejais buvo stebėtas reikšmingai didesnis triukšmo poveikis, lyginant su k artimiausių kaimynų metodo rezultatais.
+            \end{itemize}
+        
+    \end{itemize}
 
     Ateities darbuose būtų tikslinga atlikti išsamesnę triukšmo poveikio analizę, keičiant ne tik triukšmo intensyvumo parametrus, bet ir patį triukšmo tipą. Taip pat būtų prasminga išplėsti tyrimą, nagrinėjant triukšmo įtaką skirtingo pobūdžio duomenų aibėms, siekiant įvertinti gautų rezultatų bendrumą. Be to, būsimuose tyrimuose būtų naudinga analizuoti triukšmo poveikį įvairioms dirbtinių neuroninių tinklų architektūroms, siekiant nustatyti architektūros pasirinkimo reikšmę modelio triukšmo atsparumui. Analogiškai, atsižvelgiant į tai, kad šiame darbe buvo nagrinėtas $k$ artimiausių kaimynų metodas su fiksuotomis $k = 1$ ir $k = 3$ reikšmėmis, tolimesniuose darbuose būtų tikslinga ištirti, kaip triukšmo poveikis kinta priklausomai nuo parametro $k$ pasirinkimo.
