@@ -1,0 +1,15 @@
+\begin{frame}{Duomenų aibė}
+
+    \begin{itemize}
+        
+        \item Bandymams atlikti buvo generuojami keturmačiai duomenys, kurių kiekviena komponentė buvo parenkama iš intervalo $[-5; 5]$. Duomenys buvo generuoti naudojant sferos (\ref{eq:sferos_etalono_funkc} lygtis) funkciją. 
+        
+        \item Modeliai buvo pritaikyti skirtingo dydžio aibėms. Dirbtinis neuroninis tinklas buvo pritaikytas su 1~000, 10~000, 100~000, 1~000~000 dydžio duomenų aibėmis, tuo tarpu $k$ artimiausių kaimynų metodas dar papildomai buvo išbandytas su aibe, turinčia 10~000~000 įrašų. 
+        
+        \item Triukšmo pridėjimui į duomenų aibę buvo pasitelktas Gauso paskirsymo funkcijos metodas. Paklaidos buvo pridedamos prie sugeneruotų etalono funkcijų reikšmių. Triukšmas buvo generuojamos su parametrais $\mu = 0$, $\sigma = 0.5$.
+
+        \item Prieš apmokant dirbtinio neuroninio tinklos modelį duomenys buvo normalizuojami min-max metodu. Perėjus prie modelio statistinių rodiklių įvertinimo duomenys buvo grąžinami į pradinį duomenų mąstelį. Tad atsižvelgus į tai, kad duomenys buvo generuoti sferos funkcija prognozės absoliutinė paklaida įeina į intervalą $[0; 100].$
+
+    \end{itemize}
+    
+\end{frame}
