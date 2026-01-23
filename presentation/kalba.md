@@ -8,11 +8,11 @@ Nepaisant šių pasiekimų, dirbtinių neuroninių tinklų efektyvumas priklauso
 
 su švaria duomenų aibe:
 * didžiąja dalimi, modelio daromos absoliutinės paklaidos vid. ir std. nuokrypio dydžiai, didinant taškų kiekį, mažėjo 
-* visiems vid. mažėjimo atvejais jis sumažėjo daugmaž vienodai
+* visais vid. mažėjimo atvejais jis sumažėjo daugmaž vienodai
 * std. nuokrypis nepasižymi tom pačiom savybėm - sumažėjimo didumas svyravo kiek daugiau
 
 su triukšminga duomenų aibe:
-* kiek kitokie rezultatai - vid. didžiąją dalį atvejųb mažėjo, o std. nuokrypis mažėjo stabiliai
+* kiek kitokie rezultatai - vid. didžiąją dalį atvejų mažėjo, o std. nuokrypis mažėjo stabiliai
 * abiejų rodiklių pamažėjimas, didinant duomenų aibę, kito nevienodai
 
 triukšmo įtaka:
@@ -45,4 +45,4 @@ su triukšminga duomenų aibe:
 ### NN + KNN triukšmo įtaka
 triukšmo įtaka:
 * abiem atvejais buvo pastebėta, kad vid. reikšmės prastėjo vis labiau didinant duomenų aibę
-* std. nuokrypis tuo nepasižymėjo, tačiau pablogėjimo dydžiai svyravo labai panašiai
+* std. nuokrypis tuo nepasižymėjo, tačiau šip statistinio rodiklio reikšmės svyravo labai panašiai
