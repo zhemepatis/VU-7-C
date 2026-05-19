@@ -86,8 +86,8 @@ if __name__ == "__main__":
     }[(args.error_type, args.stat)]
 
     bar_color = {
-        ("mean", True):  "steelblue",
-        ("mean", False): "mediumseagreen",
+        ("mean", True):  "coral",
+        ("mean", False): "#90599f",
         ("std",  True):  "#DBC2CF",
         ("std",  False): "#9FA2B2",
     }[(args.stat, args.noise_std == 0)]

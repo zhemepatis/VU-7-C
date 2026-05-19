@@ -4,7 +4,7 @@ INPUT_FILE="${1:-output/raw_data.csv}"
 OUTPUT_DIR="${2:-output/graphs}"
 mkdir -p "$OUTPUT_DIR"
 
-METHODS=("fnn")
+METHODS=("4nn")
 # METHODS=("1nn" "2nn" "4nn" "8nn" "16nn" "32nn" "fnn")
 DATA_FUNCTIONS=("sphere_func" "rosenbrock_func" "rastrigin_func")
 STATS=("std" "mean")

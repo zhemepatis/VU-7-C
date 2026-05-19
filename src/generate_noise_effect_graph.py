@@ -61,8 +61,8 @@ if __name__ == "__main__":
     metric_ylabel = metric_ylabel_map[args.metric]
 
     bar_color_map = {
-        ("mean", True):  "steelblue",
-        ("mean", False): "mediumseagreen",
+        ("mean", True):  "coral",
+        ("mean", False): "#90599f",
         ("std",  True):  "#DBC2CF",
         ("std",  False): "#9FA2B2",
     }
