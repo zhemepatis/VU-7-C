@@ -40,8 +40,8 @@ if __name__ == "__main__":
         "--error-type",
         type = str,
         required = True,
-        choices = ["absolute", "normalized", "relative"],
-        help = "Error type to display: absolute, normalized, or relative"
+        choices = ["absolute", "normalized"],
+        help = "Error type to display: absolute, normalized"
     )
 
     parser.add_argument(
@@ -65,8 +65,7 @@ if __name__ == "__main__":
     # build column name from error type and stat arguments
     error_type_label = {
         "absolute":   "Absolute error",
-        "normalized": "Normalized error",
-        "relative":   "Relative error",
+        "normalized": "Normalized error"
     }[args.error_type]
 
     stat_label = {
@@ -80,9 +79,7 @@ if __name__ == "__main__":
         ("absolute",   "std"):  "Absoliučiosios paklaidos standartinis nuokrypis",
         ("absolute",   "mean"): "Absoliučiosios paklaidos vidurkis",
         ("normalized", "std"):  "Normalizuotos paklaidos standartinis nuokrypis",
-        ("normalized", "mean"): "Normalizuotos paklaidos vidurkis",
-        ("relative",   "std"):  "Santykinės paklaidos standartinis nuokrypis",
-        ("relative",   "mean"): "Santykinės paklaidos vidurkis",
+        ("normalized", "mean"): "Normalizuotos paklaidos vidurkis"
     }[(args.error_type, args.stat)]
 
     bar_color = {

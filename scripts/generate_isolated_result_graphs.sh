@@ -8,7 +8,7 @@ METHODS=("4nn")
 # METHODS=("1nn" "2nn" "4nn" "8nn" "16nn" "32nn" "fnn")
 NOISE_STDS=(0 5)
 ERROR_TYPES=("absolute")
-# ERROR_TYPES=("absolute" "normalized" "relative")
+# ERROR_TYPES=("absolute" "normalized")
 STATS=("std" "mean")
 DATA_FUNCTIONS=("sphere_func" "rosenbrock_func" "rastrigin_func")
 

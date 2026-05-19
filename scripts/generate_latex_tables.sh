@@ -9,7 +9,7 @@ METHOD_NAMES=("\$k\$ artimiausių kaimynų metodo" "\$k\$ artimiausių kaimynų 
 NEIGHBOUR_COUNT=(1 2 4 8 16 32 0)
 
 BENCHMARK_FUNCS=("sphere_func" "rastrigin_func" "rosenbrock_func")
-BENCHMARK_FUNC_NAMES=("sferos" "Rastrigin'o" "Rosenbrock'o")
+BENCHMARK_FUNC_NAMES=("sferos" "Rastrigino" "Rosenbrocko")
 
 NOISE_STD_VALUES=(0 5)
 NOISE_STD_NAMES=("0" "5")

@@ -13,10 +13,6 @@ Absolute error min,\
 Absolute error max,\
 Absolute error mean,\
 Absolute error std. deviation,\
-Relative error min,\
-Relative error max,\
-Relative error mean,\
-Relative error std. deviation,\
 Normalized error min,\
 Normalized error max,\
 Normalized error mean,\
@@ -25,12 +21,12 @@ Time elapsed" > "$OUTPUT_FILE"
 
 # add the known rows
 cat << 'EOF' >> "$OUTPUT_FILE"
-fnn,10000000,sphere_func,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-fnn,10000000,sphere_func,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0
-fnn,10000000,rastrigin_func,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-fnn,10000000,rastrigin_func,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0
-fnn,10000000,rosenbrock_func,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-fnn,10000000,rosenbrock_func,0,5,0,0,0,0,0,0,0,0,0,0,0,0,0
+fnn,10000000,sphere_func,0,0,0,0,0,0,0,0,0,0,0
+fnn,10000000,sphere_func,0,5,0,0,0,0,0,0,0,0,0
+fnn,10000000,rastrigin_func,0,0,0,0,0,0,0,0,0,0,0
+fnn,10000000,rastrigin_func,0,5,0,0,0,0,0,0,0,0,0
+fnn,10000000,rosenbrock_func,0,0,0,0,0,0,0,0,0,0,0
+fnn,10000000,rosenbrock_func,0,5,0,0,0,0,0,0,0,0,0
 EOF
 
 # add actual results

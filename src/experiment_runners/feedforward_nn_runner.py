@@ -97,16 +97,9 @@ class FeedforwardNNRunner(BaseRunner):
         
         err_min, err_max, err_mean, err_std = self._calculate_statistics(absolute_err_set)
         absolute_err_stats :ErrorStatistics = ErrorStatistics(err_min, err_max, err_mean, err_std) 
-        
-        epsilon = 1e-8
-
-        # relative error
-        relative_err_set :np.ndarray = np.abs(prediction_set.scalars - test_set.scalars) / np.abs(test_set.scalars + epsilon)
-        
-        err_min, err_max, err_mean, err_std = self._calculate_statistics(relative_err_set)
-        relative_err_stats :ErrorStatistics = ErrorStatistics(err_min, err_max, err_mean, err_std) 
 
         # normalized error
+        epsilon = 1e-8
         min_scalar = self.data_set_config.benchmark_func_config.min
         max_scalar = self.data_set_config.benchmark_func_config.max
         normalized_err_set :np.ndarray = np.abs(prediction_set.scalars - test_set.scalars) / (max_scalar - min_scalar + epsilon)
@@ -114,7 +107,7 @@ class FeedforwardNNRunner(BaseRunner):
         err_min, err_max, err_mean, err_std = self._calculate_statistics(normalized_err_set)
         normalized_err_stats :ErrorStatistics = ErrorStatistics(err_min, err_max, err_mean, err_std) 
 
-        return ExperimentStatistics(absolute_err_stats, relative_err_stats, normalized_err_stats)
+        return ExperimentStatistics(absolute_err_stats, normalized_err_stats)
 
 
     def __train(self, 

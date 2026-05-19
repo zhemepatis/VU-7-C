@@ -29,7 +29,6 @@ class BaseRunner(ABC):
     def run(self) -> ExperimentStatistics:
         
         absolute_err_stats :ErrorStatistics = ErrorStatistics(0.0, 0.0, 0.0, 0.0)
-        relative_err_stats :ErrorStatistics = ErrorStatistics(0.0, 0.0, 0.0, 0.0)
         normalized_err_stats :ErrorStatistics = ErrorStatistics(0.0, 0.0, 0.0, 0.0)
 
         with Pool(self.experiment_config.process_number) as pool:
@@ -38,15 +37,13 @@ class BaseRunner(ABC):
         # accumulate statistics
         for curr_try_stats in results:
             self.__accumulate_error_stats(absolute_err_stats, curr_try_stats.absolute_error_stats)
-            self.__accumulate_error_stats(relative_err_stats, curr_try_stats.relative_error_stats)
             self.__accumulate_error_stats(normalized_err_stats, curr_try_stats.normalized_error_stats)
 
         # calculate statistic average
         self.__average_error_stats(absolute_err_stats, self.experiment_config.try_count)
-        self.__average_error_stats(relative_err_stats, self.experiment_config.try_count)
         self.__average_error_stats(normalized_err_stats, self.experiment_config.try_count)
 
-        return ExperimentStatistics(absolute_err_stats, relative_err_stats, normalized_err_stats)
+        return ExperimentStatistics(absolute_err_stats, normalized_err_stats)
 
 
     @abstractmethod
