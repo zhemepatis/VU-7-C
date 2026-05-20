@@ -10,7 +10,7 @@ class FeedforwardNN(nn.Module):
         
         # 1st fully connected (hidden) layer configuration
         self.h1_linear_func :int = nn.Linear(input_neuron_num, h1_neuron_num)
-        self.h1_activation_func :int = nn.Sigmoid()
+        self.h1_activation_func :int = nn.ReLU()
 
         # output layer configuration
         # note: since our goal is to predict a real number,

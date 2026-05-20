@@ -2,7 +2,8 @@
 
 mkdir -p output/raw
 
-BENCHMARK_FUNCS=("sphere_func" "rosenbrock_func" "rastrigin_func")
+BENCHMARK_FUNCS=("rastrigin_func")
+# BENCHMARK_FUNCS=("sphere_func" "rosenbrock_func" "rastrigin_func")
 DATA_SET_SIZES=(1000 10000 100000 1000000)
 NOISE=("None" 5)
 
